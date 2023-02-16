@@ -1,0 +1,71 @@
+@font-face{
+  font-family:wpbingo2;
+  src:url(../fonts/wpbingo2%EF%B9%96j548wt.eot);
+  src:url(../fonts/wpbingo2%EF%B9%96j548wt.eot#iefix) format("embedded-opentype"),url(../fonts/wpbingo2%EF%B9%96j548wt.ttf) format("truetype"),url(../fonts/wpbingo2%EF%B9%96j548wt.woff) format("woff"),url(../fonts/wpbingo2%EF%B9%96j548wt.svg#wpbingo2) format("svg");
+  font-weight:400;
+  font-style:normal;
+  font-display:block;
+}
+
+[class*=" icon2-"],[class^=icon2-]{
+  font-family:wpbingo2 !important;
+  speak:never;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.icon2-right-arrow:before{
+  content:"\e910";
+}
+.icon2-quote:before{
+  content:"\e90e";
+}
+.icon2-beer:before{
+  content:"\e907";
+}
+.icon2-champagne:before{
+  content:"\e908";
+}
+.icon2-tequila:before{
+  content:"\e909";
+}
+.icon2-whisky:before{
+  content:"\e90a";
+}
+.icon2-wine:before{
+  content:"\e90c";
+}
+.icon2-wine-glass:before{
+  content:"\e90d";
+}
+.icon2-chat:before{
+  content:"\e90f";
+}
+.icon2-mail:before{
+  content:"\e901";
+}
+.icon2-shopping-bag:before{
+  content:"\e904";
+}
+.icon2-shuffle:before{
+  content:"\e900";
+}
+.icon2-delivery:before{
+  content:"\e906";
+}
+.icon2-user:before{
+  content:"\e902";
+}
+.icon2-heart:before{
+  content:"\e903";
+}
+.icon2-search:before{
+  content:"\e905";
+}
+.icon2-telephone:before{
+  content:"\e90b";
+}

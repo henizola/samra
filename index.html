@@ -1,0 +1,4940 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<script>if (navigator.userAgent.match(/MSIE|Internet Explorer/i) || navigator.userAgent.match(/Trident\/7\..*?rv:11/i)) { var href = document.location.href; if (!href.match(/[?&]nowprocket/)) { if (href.indexOf("?") == -1) { if (href.indexOf("#") == -1) { document.location.href = href + "?nowprocket=1" } else { document.location.href = href.replace("#", "?nowprocket=1#") } } else { if (href.indexOf("#") == -1) { document.location.href = href + "&nowprocket=1" } else { document.location.href = href.replace("#", "&nowprocket=1#") } } } }</script>
+	<script>class RocketLazyLoadScripts { constructor() { this.triggerEvents = ["keydown", "mousedown", "mousemove", "touchmove", "touchstart", "touchend", "wheel"], this.userEventHandler = this._triggerListener.bind(this), this.touchStartHandler = this._onTouchStart.bind(this), this.touchMoveHandler = this._onTouchMove.bind(this), this.touchEndHandler = this._onTouchEnd.bind(this), this.clickHandler = this._onClick.bind(this), this.interceptedClicks = [], window.addEventListener("pageshow", (e => { this.persisted = e.persisted })), window.addEventListener("DOMContentLoaded", (() => { this._preconnect3rdParties() })), this.delayedScripts = { normal: [], async: [], defer: [] }, this.allJQueries = [] } _addUserInteractionListener(e) { document.hidden ? e._triggerListener() : (this.triggerEvents.forEach((t => window.addEventListener(t, e.userEventHandler, { passive: !0 }))), window.addEventListener("touchstart", e.touchStartHandler, { passive: !0 }), window.addEventListener("mousedown", e.touchStartHandler), document.addEventListener("visibilitychange", e.userEventHandler)) } _removeUserInteractionListener() { this.triggerEvents.forEach((e => window.removeEventListener(e, this.userEventHandler, { passive: !0 }))), document.removeEventListener("visibilitychange", this.userEventHandler) } _onTouchStart(e) { "HTML" !== e.target.tagName && (window.addEventListener("touchend", this.touchEndHandler), window.addEventListener("mouseup", this.touchEndHandler), window.addEventListener("touchmove", this.touchMoveHandler, { passive: !0 }), window.addEventListener("mousemove", this.touchMoveHandler), e.target.addEventListener("click", this.clickHandler), this._renameDOMAttribute(e.target, "onclick", "rocket-onclick")) } _onTouchMove(e) { window.removeEventListener("touchend", this.touchEndHandler), window.removeEventListener("mouseup", this.touchEndHandler), window.removeEventListener("touchmove", this.touchMoveHandler, { passive: !0 }), window.removeEventListener("mousemove", this.touchMoveHandler), e.target.removeEventListener("click", this.clickHandler), this._renameDOMAttribute(e.target, "rocket-onclick", "onclick") } _onTouchEnd(e) { window.removeEventListener("touchend", this.touchEndHandler), window.removeEventListener("mouseup", this.touchEndHandler), window.removeEventListener("touchmove", this.touchMoveHandler, { passive: !0 }), window.removeEventListener("mousemove", this.touchMoveHandler) } _onClick(e) { e.target.removeEventListener("click", this.clickHandler), this._renameDOMAttribute(e.target, "rocket-onclick", "onclick"), this.interceptedClicks.push(e), e.preventDefault(), e.stopPropagation(), e.stopImmediatePropagation() } _replayClicks() { window.removeEventListener("touchstart", this.touchStartHandler, { passive: !0 }), window.removeEventListener("mousedown", this.touchStartHandler), this.interceptedClicks.forEach((e => { e.target.dispatchEvent(new MouseEvent("click", { view: e.view, bubbles: !0, cancelable: !0 })) })) } _renameDOMAttribute(e, t, n) { e.hasAttribute && e.hasAttribute(t) && (event.target.setAttribute(n, event.target.getAttribute(t)), event.target.removeAttribute(t)) } _triggerListener() { this._removeUserInteractionListener(this), "loading" === document.readyState ? document.addEventListener("DOMContentLoaded", this._loadEverythingNow.bind(this)) : this._loadEverythingNow() } _preconnect3rdParties() { let e = []; document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t => { if (t.hasAttribute("src")) { const n = new URL(t.src).origin; n !== location.origin && e.push({ src: n, crossOrigin: t.crossOrigin || "module" === t.getAttribute("data-rocket-type") }) } })), e = [...new Map(e.map((e => [JSON.stringify(e), e]))).values()], this._batchInjectResourceHints(e, "preconnect") } async _loadEverythingNow() { this.lastBreath = Date.now(), this._delayEventListeners(), this._delayJQueryReady(this), this._handleDocumentWrite(), this._registerAllDelayedScripts(), this._preloadAllScripts(), await this._loadScriptsFromList(this.delayedScripts.normal), await this._loadScriptsFromList(this.delayedScripts.defer), await this._loadScriptsFromList(this.delayedScripts.async); try { await this._triggerDOMContentLoaded(), await this._triggerWindowLoad() } catch (e) { } window.dispatchEvent(new Event("rocket-allScriptsLoaded")), this._replayClicks() } _registerAllDelayedScripts() { document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e => { e.hasAttribute("src") ? e.hasAttribute("async") && !1 !== e.async ? this.delayedScripts.async.push(e) : e.hasAttribute("defer") && !1 !== e.defer || "module" === e.getAttribute("data-rocket-type") ? this.delayedScripts.defer.push(e) : this.delayedScripts.normal.push(e) : this.delayedScripts.normal.push(e) })) } async _transformScript(e) { return await this._littleBreath(), new Promise((t => { const n = document.createElement("script");[...e.attributes].forEach((e => { let t = e.nodeName; "type" !== t && ("data-rocket-type" === t && (t = "type"), n.setAttribute(t, e.nodeValue)) })), e.hasAttribute("src") ? (n.addEventListener("load", t), n.addEventListener("error", t)) : (n.text = e.text, t()); try { e.parentNode.replaceChild(n, e) } catch (e) { t() } })) } async _loadScriptsFromList(e) { const t = e.shift(); return t ? (await this._transformScript(t), this._loadScriptsFromList(e)) : Promise.resolve() } _preloadAllScripts() { this._batchInjectResourceHints([...this.delayedScripts.normal, ...this.delayedScripts.defer, ...this.delayedScripts.async], "preload") } _batchInjectResourceHints(e, t) { var n = document.createDocumentFragment(); e.forEach((e => { if (e.src) { const i = document.createElement("link"); i.href = e.src, i.rel = t, "preconnect" !== t && (i.as = "script"), e.getAttribute && "module" === e.getAttribute("data-rocket-type") && (i.crossOrigin = !0), e.crossOrigin && (i.crossOrigin = e.crossOrigin), n.appendChild(i) } })), document.head.appendChild(n) } _delayEventListeners() { let e = {}; function t(t, n) { !function (t) { function n(n) { return e[t].eventsToRewrite.indexOf(n) >= 0 ? "rocket-" + n : n } e[t] || (e[t] = { originalFunctions: { add: t.addEventListener, remove: t.removeEventListener }, eventsToRewrite: [] }, t.addEventListener = function () { arguments[0] = n(arguments[0]), e[t].originalFunctions.add.apply(t, arguments) }, t.removeEventListener = function () { arguments[0] = n(arguments[0]), e[t].originalFunctions.remove.apply(t, arguments) }) }(t), e[t].eventsToRewrite.push(n) } function n(e, t) { let n = e[t]; Object.defineProperty(e, t, { get: () => n || function () { }, set(i) { e["rocket" + t] = n = i } }) } t(document, "DOMContentLoaded"), t(window, "DOMContentLoaded"), t(window, "load"), t(window, "pageshow"), t(document, "readystatechange"), n(document, "onreadystatechange"), n(window, "onload"), n(window, "onpageshow") } _delayJQueryReady(e) { let t = window.jQuery; Object.defineProperty(window, "jQuery", { get: () => t, set(n) { if (n && n.fn && !e.allJQueries.includes(n)) { n.fn.ready = n.fn.init.prototype.ready = function (t) { e.domReadyFired ? t.bind(document)(n) : document.addEventListener("rocket-DOMContentLoaded", (() => t.bind(document)(n))) }; const t = n.fn.on; n.fn.on = n.fn.init.prototype.on = function () { if (this[0] === window) { function e(e) { return e.split(" ").map((e => "load" === e || 0 === e.indexOf("load.") ? "rocket-jquery-load" : e)).join(" ") } "string" == typeof arguments[0] || arguments[0] instanceof String ? arguments[0] = e(arguments[0]) : "object" == typeof arguments[0] && Object.keys(arguments[0]).forEach((t => { delete Object.assign(arguments[0], { [e(t)]: arguments[0][t] })[t] })) } return t.apply(this, arguments), this }, e.allJQueries.push(n) } t = n } }) } async _triggerDOMContentLoaded() { this.domReadyFired = !0, await this._littleBreath(), document.dispatchEvent(new Event("rocket-DOMContentLoaded")), await this._littleBreath(), window.dispatchEvent(new Event("rocket-DOMContentLoaded")), await this._littleBreath(), document.dispatchEvent(new Event("rocket-readystatechange")), await this._littleBreath(), document.rocketonreadystatechange && document.rocketonreadystatechange() } async _triggerWindowLoad() { await this._littleBreath(), window.dispatchEvent(new Event("rocket-load")), await this._littleBreath(), window.rocketonload && window.rocketonload(), await this._littleBreath(), this.allJQueries.forEach((e => e(window).trigger("rocket-jquery-load"))), await this._littleBreath(); const e = new Event("rocket-pageshow"); e.persisted = this.persisted, window.dispatchEvent(e), await this._littleBreath(), window.rocketonpageshow && window.rocketonpageshow({ persisted: this.persisted }) } _handleDocumentWrite() { const e = new Map; document.write = document.writeln = function (t) { const n = document.currentScript, i = document.createRange(), r = n.parentElement; let o = e.get(n); void 0 === o && (o = n.nextSibling, e.set(n, o)); const s = document.createDocumentFragment(); i.setStart(s, 0), s.appendChild(i.createContextualFragment(t)), r.insertBefore(s, o) } } async _littleBreath() { Date.now() - this.lastBreath > 45 && (await this._requestAnimFrame(), this.lastBreath = Date.now()) } async _requestAnimFrame() { return document.hidden ? new Promise((e => setTimeout(e))) : new Promise((e => requestAnimationFrame(e))) } static run() { const e = new RocketLazyLoadScripts; e._addUserInteractionListener(e) } } RocketLazyLoadScripts.run();</script>
+
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<title>SAMRA - Leathers</title>
+	<link rel="preload" as="style"
+		href="https://fonts.googleapis.com/css?family=Jost%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Jost%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap"
+		media="print" onload="this.media='all'" /><noscript>
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Jost%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap" />
+	</noscript>
+	<link rel="preload" as="style"
+		href="https://fonts.googleapis.com/css2?family=Jost%3Aital%2Cwght%400%2C100%3B0%2C200%3B0%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B1%2C100%3B1%2C200%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700&amp;ver=5.8.6&amp;family=Marcellus&amp;ver=5.8.6&amp;display=swap" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Jost%3Aital%2Cwght%400%2C100%3B0%2C200%3B0%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B1%2C100%3B1%2C200%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700&amp;ver=5.8.6&amp;family=Marcellus&amp;ver=5.8.6&amp;display=swap"
+		media="print" onload="this.media='all'" /><noscript>
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Jost%3Aital%2Cwght%400%2C100%3B0%2C200%3B0%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B1%2C100%3B1%2C200%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700&amp;ver=5.8.6&amp;family=Marcellus&amp;ver=5.8.6&amp;display=swap" />
+	</noscript>
+	<link rel="stylesheet" href="wp-content/cache/min/1/f41486846dda1921d2d63f7419513ced.css" media="all"
+		data-minify="1" />
+	<meta name='robots' content='max-image-preview:large' />
+	<link rel='dns-prefetch' href='https://fonts.googleapis.com' />
+	<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+	<link rel="alternate" type="application/rss+xml"
+		title="Wrish – Watch Store WooCommerce WordPress Theme &raquo; Feed" href="feed/index.rss" />
+	<link rel="alternate" type="application/rss+xml"
+		title="Wrish – Watch Store WooCommerce WordPress Theme &raquo; Comments Feed" href="comments/feed/index.rss" />
+	<style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+
+
+	<style>
+		* {
+			font-family: 'Montserrat', sans-serif !important;
+		}
+	</style>
+
+
+	<style id='extendify-gutenberg-patterns-and-templates-utilities-inline-css' type='text/css'>
+		.ext-absolute {
+			position: absolute !important
+		}
+
+		.ext-relative {
+			position: relative !important
+		}
+
+		.ext-top-base {
+			top: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-top-lg {
+			top: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--top-base {
+			top: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--top-lg {
+			top: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-right-base {
+			right: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-right-lg {
+			right: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--right-base {
+			right: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--right-lg {
+			right: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-bottom-base {
+			bottom: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-bottom-lg {
+			bottom: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--bottom-base {
+			bottom: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--bottom-lg {
+			bottom: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-left-base {
+			left: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-left-lg {
+			left: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--left-base {
+			left: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--left-lg {
+			left: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-order-1 {
+			order: 1 !important
+		}
+
+		.ext-order-2 {
+			order: 2 !important
+		}
+
+		.ext-col-auto {
+			grid-column: auto !important
+		}
+
+		.ext-col-span-1 {
+			grid-column: span 1/span 1 !important
+		}
+
+		.ext-col-span-2 {
+			grid-column: span 2/span 2 !important
+		}
+
+		.ext-col-span-3 {
+			grid-column: span 3/span 3 !important
+		}
+
+		.ext-col-span-4 {
+			grid-column: span 4/span 4 !important
+		}
+
+		.ext-col-span-5 {
+			grid-column: span 5/span 5 !important
+		}
+
+		.ext-col-span-6 {
+			grid-column: span 6/span 6 !important
+		}
+
+		.ext-col-span-7 {
+			grid-column: span 7/span 7 !important
+		}
+
+		.ext-col-span-8 {
+			grid-column: span 8/span 8 !important
+		}
+
+		.ext-col-span-9 {
+			grid-column: span 9/span 9 !important
+		}
+
+		.ext-col-span-10 {
+			grid-column: span 10/span 10 !important
+		}
+
+		.ext-col-span-11 {
+			grid-column: span 11/span 11 !important
+		}
+
+		.ext-col-span-12 {
+			grid-column: span 12/span 12 !important
+		}
+
+		.ext-col-span-full {
+			grid-column: 1/-1 !important
+		}
+
+		.ext-col-start-1 {
+			grid-column-start: 1 !important
+		}
+
+		.ext-col-start-2 {
+			grid-column-start: 2 !important
+		}
+
+		.ext-col-start-3 {
+			grid-column-start: 3 !important
+		}
+
+		.ext-col-start-4 {
+			grid-column-start: 4 !important
+		}
+
+		.ext-col-start-5 {
+			grid-column-start: 5 !important
+		}
+
+		.ext-col-start-6 {
+			grid-column-start: 6 !important
+		}
+
+		.ext-col-start-7 {
+			grid-column-start: 7 !important
+		}
+
+		.ext-col-start-8 {
+			grid-column-start: 8 !important
+		}
+
+		.ext-col-start-9 {
+			grid-column-start: 9 !important
+		}
+
+		.ext-col-start-10 {
+			grid-column-start: 10 !important
+		}
+
+		.ext-col-start-11 {
+			grid-column-start: 11 !important
+		}
+
+		.ext-col-start-12 {
+			grid-column-start: 12 !important
+		}
+
+		.ext-col-start-13 {
+			grid-column-start: 13 !important
+		}
+
+		.ext-col-start-auto {
+			grid-column-start: auto !important
+		}
+
+		.ext-col-end-1 {
+			grid-column-end: 1 !important
+		}
+
+		.ext-col-end-2 {
+			grid-column-end: 2 !important
+		}
+
+		.ext-col-end-3 {
+			grid-column-end: 3 !important
+		}
+
+		.ext-col-end-4 {
+			grid-column-end: 4 !important
+		}
+
+		.ext-col-end-5 {
+			grid-column-end: 5 !important
+		}
+
+		.ext-col-end-6 {
+			grid-column-end: 6 !important
+		}
+
+		.ext-col-end-7 {
+			grid-column-end: 7 !important
+		}
+
+		.ext-col-end-8 {
+			grid-column-end: 8 !important
+		}
+
+		.ext-col-end-9 {
+			grid-column-end: 9 !important
+		}
+
+		.ext-col-end-10 {
+			grid-column-end: 10 !important
+		}
+
+		.ext-col-end-11 {
+			grid-column-end: 11 !important
+		}
+
+		.ext-col-end-12 {
+			grid-column-end: 12 !important
+		}
+
+		.ext-col-end-13 {
+			grid-column-end: 13 !important
+		}
+
+		.ext-col-end-auto {
+			grid-column-end: auto !important
+		}
+
+		.ext-row-auto {
+			grid-row: auto !important
+		}
+
+		.ext-row-span-1 {
+			grid-row: span 1/span 1 !important
+		}
+
+		.ext-row-span-2 {
+			grid-row: span 2/span 2 !important
+		}
+
+		.ext-row-span-3 {
+			grid-row: span 3/span 3 !important
+		}
+
+		.ext-row-span-4 {
+			grid-row: span 4/span 4 !important
+		}
+
+		.ext-row-span-5 {
+			grid-row: span 5/span 5 !important
+		}
+
+		.ext-row-span-6 {
+			grid-row: span 6/span 6 !important
+		}
+
+		.ext-row-span-full {
+			grid-row: 1/-1 !important
+		}
+
+		.ext-row-start-1 {
+			grid-row-start: 1 !important
+		}
+
+		.ext-row-start-2 {
+			grid-row-start: 2 !important
+		}
+
+		.ext-row-start-3 {
+			grid-row-start: 3 !important
+		}
+
+		.ext-row-start-4 {
+			grid-row-start: 4 !important
+		}
+
+		.ext-row-start-5 {
+			grid-row-start: 5 !important
+		}
+
+		.ext-row-start-6 {
+			grid-row-start: 6 !important
+		}
+
+		.ext-row-start-7 {
+			grid-row-start: 7 !important
+		}
+
+		.ext-row-start-auto {
+			grid-row-start: auto !important
+		}
+
+		.ext-row-end-1 {
+			grid-row-end: 1 !important
+		}
+
+		.ext-row-end-2 {
+			grid-row-end: 2 !important
+		}
+
+		.ext-row-end-3 {
+			grid-row-end: 3 !important
+		}
+
+		.ext-row-end-4 {
+			grid-row-end: 4 !important
+		}
+
+		.ext-row-end-5 {
+			grid-row-end: 5 !important
+		}
+
+		.ext-row-end-6 {
+			grid-row-end: 6 !important
+		}
+
+		.ext-row-end-7 {
+			grid-row-end: 7 !important
+		}
+
+		.ext-row-end-auto {
+			grid-row-end: auto !important
+		}
+
+		.ext-m-0:not([style*=margin]) {
+			margin: 0 !important
+		}
+
+		.ext-m-auto:not([style*=margin]) {
+			margin: auto !important
+		}
+
+		.ext-m-base:not([style*=margin]) {
+			margin: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-m-lg:not([style*=margin]) {
+			margin: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--m-base:not([style*=margin]) {
+			margin: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--m-lg:not([style*=margin]) {
+			margin: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-mx-0:not([style*=margin]) {
+			margin-left: 0 !important;
+			margin-right: 0 !important
+		}
+
+		.ext-mx-auto:not([style*=margin]) {
+			margin-left: auto !important;
+			margin-right: auto !important
+		}
+
+		.ext-mx-base:not([style*=margin]) {
+			margin-left: var(--wp--style--block-gap, 1.75rem) !important;
+			margin-right: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-mx-lg:not([style*=margin]) {
+			margin-left: var(--extendify--spacing--large, 3rem) !important;
+			margin-right: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--mx-base:not([style*=margin]) {
+			margin-left: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important;
+			margin-right: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--mx-lg:not([style*=margin]) {
+			margin-left: calc(var(--extendify--spacing--large, 3rem)*-1) !important;
+			margin-right: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-my-0:not([style*=margin]) {
+			margin-bottom: 0 !important;
+			margin-top: 0 !important
+		}
+
+		.ext-my-auto:not([style*=margin]) {
+			margin-bottom: auto !important;
+			margin-top: auto !important
+		}
+
+		.ext-my-base:not([style*=margin]) {
+			margin-bottom: var(--wp--style--block-gap, 1.75rem) !important;
+			margin-top: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-my-lg:not([style*=margin]) {
+			margin-bottom: var(--extendify--spacing--large, 3rem) !important;
+			margin-top: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--my-base:not([style*=margin]) {
+			margin-bottom: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important;
+			margin-top: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--my-lg:not([style*=margin]) {
+			margin-bottom: calc(var(--extendify--spacing--large, 3rem)*-1) !important;
+			margin-top: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-mt-0:not([style*=margin]) {
+			margin-top: 0 !important
+		}
+
+		.ext-mt-auto:not([style*=margin]) {
+			margin-top: auto !important
+		}
+
+		.ext-mt-base:not([style*=margin]) {
+			margin-top: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-mt-lg:not([style*=margin]) {
+			margin-top: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--mt-base:not([style*=margin]) {
+			margin-top: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--mt-lg:not([style*=margin]) {
+			margin-top: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-mr-0:not([style*=margin]) {
+			margin-right: 0 !important
+		}
+
+		.ext-mr-auto:not([style*=margin]) {
+			margin-right: auto !important
+		}
+
+		.ext-mr-base:not([style*=margin]) {
+			margin-right: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-mr-lg:not([style*=margin]) {
+			margin-right: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--mr-base:not([style*=margin]) {
+			margin-right: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--mr-lg:not([style*=margin]) {
+			margin-right: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-mb-0:not([style*=margin]) {
+			margin-bottom: 0 !important
+		}
+
+		.ext-mb-auto:not([style*=margin]) {
+			margin-bottom: auto !important
+		}
+
+		.ext-mb-base:not([style*=margin]) {
+			margin-bottom: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-mb-lg:not([style*=margin]) {
+			margin-bottom: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--mb-base:not([style*=margin]) {
+			margin-bottom: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--mb-lg:not([style*=margin]) {
+			margin-bottom: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-ml-0:not([style*=margin]) {
+			margin-left: 0 !important
+		}
+
+		.ext-ml-auto:not([style*=margin]) {
+			margin-left: auto !important
+		}
+
+		.ext-ml-base:not([style*=margin]) {
+			margin-left: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-ml-lg:not([style*=margin]) {
+			margin-left: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext--ml-base:not([style*=margin]) {
+			margin-left: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+		}
+
+		.ext--ml-lg:not([style*=margin]) {
+			margin-left: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+		}
+
+		.ext-block {
+			display: block !important
+		}
+
+		.ext-inline-block {
+			display: inline-block !important
+		}
+
+		.ext-inline {
+			display: inline !important
+		}
+
+		.ext-flex {
+			display: flex !important
+		}
+
+		.ext-inline-flex {
+			display: inline-flex !important
+		}
+
+		.ext-grid {
+			display: grid !important
+		}
+
+		.ext-inline-grid {
+			display: inline-grid !important
+		}
+
+		.ext-hidden {
+			display: none !important
+		}
+
+		.ext-w-auto {
+			width: auto !important
+		}
+
+		.ext-w-full {
+			width: 100% !important
+		}
+
+		.ext-max-w-full {
+			max-width: 100% !important
+		}
+
+		.ext-flex-1 {
+			flex: 1 1 0% !important
+		}
+
+		.ext-flex-auto {
+			flex: 1 1 auto !important
+		}
+
+		.ext-flex-initial {
+			flex: 0 1 auto !important
+		}
+
+		.ext-flex-none {
+			flex: none !important
+		}
+
+		.ext-flex-shrink-0 {
+			flex-shrink: 0 !important
+		}
+
+		.ext-flex-shrink {
+			flex-shrink: 1 !important
+		}
+
+		.ext-flex-grow-0 {
+			flex-grow: 0 !important
+		}
+
+		.ext-flex-grow {
+			flex-grow: 1 !important
+		}
+
+		.ext-list-none {
+			list-style-type: none !important
+		}
+
+		.ext-grid-cols-1 {
+			grid-template-columns: repeat(1, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-2 {
+			grid-template-columns: repeat(2, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-3 {
+			grid-template-columns: repeat(3, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-4 {
+			grid-template-columns: repeat(4, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-5 {
+			grid-template-columns: repeat(5, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-6 {
+			grid-template-columns: repeat(6, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-7 {
+			grid-template-columns: repeat(7, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-8 {
+			grid-template-columns: repeat(8, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-9 {
+			grid-template-columns: repeat(9, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-10 {
+			grid-template-columns: repeat(10, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-11 {
+			grid-template-columns: repeat(11, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-12 {
+			grid-template-columns: repeat(12, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-cols-none {
+			grid-template-columns: none !important
+		}
+
+		.ext-grid-rows-1 {
+			grid-template-rows: repeat(1, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-rows-2 {
+			grid-template-rows: repeat(2, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-rows-3 {
+			grid-template-rows: repeat(3, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-rows-4 {
+			grid-template-rows: repeat(4, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-rows-5 {
+			grid-template-rows: repeat(5, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-rows-6 {
+			grid-template-rows: repeat(6, minmax(0, 1fr)) !important
+		}
+
+		.ext-grid-rows-none {
+			grid-template-rows: none !important
+		}
+
+		.ext-flex-row {
+			flex-direction: row !important
+		}
+
+		.ext-flex-row-reverse {
+			flex-direction: row-reverse !important
+		}
+
+		.ext-flex-col {
+			flex-direction: column !important
+		}
+
+		.ext-flex-col-reverse {
+			flex-direction: column-reverse !important
+		}
+
+		.ext-flex-wrap {
+			flex-wrap: wrap !important
+		}
+
+		.ext-flex-wrap-reverse {
+			flex-wrap: wrap-reverse !important
+		}
+
+		.ext-flex-nowrap {
+			flex-wrap: nowrap !important
+		}
+
+		.ext-items-start {
+			align-items: flex-start !important
+		}
+
+		.ext-items-end {
+			align-items: flex-end !important
+		}
+
+		.ext-items-center {
+			align-items: center !important
+		}
+
+		.ext-items-baseline {
+			align-items: baseline !important
+		}
+
+		.ext-items-stretch {
+			align-items: stretch !important
+		}
+
+		.ext-justify-start {
+			justify-content: flex-start !important
+		}
+
+		.ext-justify-end {
+			justify-content: flex-end !important
+		}
+
+		.ext-justify-center {
+			justify-content: center !important
+		}
+
+		.ext-justify-between {
+			justify-content: space-between !important
+		}
+
+		.ext-justify-around {
+			justify-content: space-around !important
+		}
+
+		.ext-justify-evenly {
+			justify-content: space-evenly !important
+		}
+
+		.ext-justify-items-start {
+			justify-items: start !important
+		}
+
+		.ext-justify-items-end {
+			justify-items: end !important
+		}
+
+		.ext-justify-items-center {
+			justify-items: center !important
+		}
+
+		.ext-justify-items-stretch {
+			justify-items: stretch !important
+		}
+
+		.ext-gap-0 {
+			gap: 0 !important
+		}
+
+		.ext-gap-base {
+			gap: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-gap-lg {
+			gap: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext-gap-x-0 {
+			-moz-column-gap: 0 !important;
+			column-gap: 0 !important
+		}
+
+		.ext-gap-x-base {
+			-moz-column-gap: var(--wp--style--block-gap, 1.75rem) !important;
+			column-gap: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-gap-x-lg {
+			-moz-column-gap: var(--extendify--spacing--large, 3rem) !important;
+			column-gap: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext-gap-y-0 {
+			row-gap: 0 !important
+		}
+
+		.ext-gap-y-base {
+			row-gap: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-gap-y-lg {
+			row-gap: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext-justify-self-auto {
+			justify-self: auto !important
+		}
+
+		.ext-justify-self-start {
+			justify-self: start !important
+		}
+
+		.ext-justify-self-end {
+			justify-self: end !important
+		}
+
+		.ext-justify-self-center {
+			justify-self: center !important
+		}
+
+		.ext-justify-self-stretch {
+			justify-self: stretch !important
+		}
+
+		.ext-rounded-none {
+			border-radius: 0 !important
+		}
+
+		.ext-rounded-full {
+			border-radius: 9999px !important
+		}
+
+		.ext-rounded-t-none {
+			border-top-left-radius: 0 !important;
+			border-top-right-radius: 0 !important
+		}
+
+		.ext-rounded-t-full {
+			border-top-left-radius: 9999px !important;
+			border-top-right-radius: 9999px !important
+		}
+
+		.ext-rounded-r-none {
+			border-bottom-right-radius: 0 !important;
+			border-top-right-radius: 0 !important
+		}
+
+		.ext-rounded-r-full {
+			border-bottom-right-radius: 9999px !important;
+			border-top-right-radius: 9999px !important
+		}
+
+		.ext-rounded-b-none {
+			border-bottom-left-radius: 0 !important;
+			border-bottom-right-radius: 0 !important
+		}
+
+		.ext-rounded-b-full {
+			border-bottom-left-radius: 9999px !important;
+			border-bottom-right-radius: 9999px !important
+		}
+
+		.ext-rounded-l-none {
+			border-bottom-left-radius: 0 !important;
+			border-top-left-radius: 0 !important
+		}
+
+		.ext-rounded-l-full {
+			border-bottom-left-radius: 9999px !important;
+			border-top-left-radius: 9999px !important
+		}
+
+		.ext-rounded-tl-none {
+			border-top-left-radius: 0 !important
+		}
+
+		.ext-rounded-tl-full {
+			border-top-left-radius: 9999px !important
+		}
+
+		.ext-rounded-tr-none {
+			border-top-right-radius: 0 !important
+		}
+
+		.ext-rounded-tr-full {
+			border-top-right-radius: 9999px !important
+		}
+
+		.ext-rounded-br-none {
+			border-bottom-right-radius: 0 !important
+		}
+
+		.ext-rounded-br-full {
+			border-bottom-right-radius: 9999px !important
+		}
+
+		.ext-rounded-bl-none {
+			border-bottom-left-radius: 0 !important
+		}
+
+		.ext-rounded-bl-full {
+			border-bottom-left-radius: 9999px !important
+		}
+
+		.ext-border-0 {
+			border-width: 0 !important
+		}
+
+		.ext-border-t-0 {
+			border-top-width: 0 !important
+		}
+
+		.ext-border-r-0 {
+			border-right-width: 0 !important
+		}
+
+		.ext-border-b-0 {
+			border-bottom-width: 0 !important
+		}
+
+		.ext-border-l-0 {
+			border-left-width: 0 !important
+		}
+
+		.ext-p-0:not([style*=padding]) {
+			padding: 0 !important
+		}
+
+		.ext-p-base:not([style*=padding]) {
+			padding: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-p-lg:not([style*=padding]) {
+			padding: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext-px-0:not([style*=padding]) {
+			padding-left: 0 !important;
+			padding-right: 0 !important
+		}
+
+		.ext-px-base:not([style*=padding]) {
+			padding-left: var(--wp--style--block-gap, 1.75rem) !important;
+			padding-right: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-px-lg:not([style*=padding]) {
+			padding-left: var(--extendify--spacing--large, 3rem) !important;
+			padding-right: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext-py-0:not([style*=padding]) {
+			padding-bottom: 0 !important;
+			padding-top: 0 !important
+		}
+
+		.ext-py-base:not([style*=padding]) {
+			padding-bottom: var(--wp--style--block-gap, 1.75rem) !important;
+			padding-top: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-py-lg:not([style*=padding]) {
+			padding-bottom: var(--extendify--spacing--large, 3rem) !important;
+			padding-top: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext-pt-0:not([style*=padding]) {
+			padding-top: 0 !important
+		}
+
+		.ext-pt-base:not([style*=padding]) {
+			padding-top: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-pt-lg:not([style*=padding]) {
+			padding-top: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext-pr-0:not([style*=padding]) {
+			padding-right: 0 !important
+		}
+
+		.ext-pr-base:not([style*=padding]) {
+			padding-right: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-pr-lg:not([style*=padding]) {
+			padding-right: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext-pb-0:not([style*=padding]) {
+			padding-bottom: 0 !important
+		}
+
+		.ext-pb-base:not([style*=padding]) {
+			padding-bottom: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-pb-lg:not([style*=padding]) {
+			padding-bottom: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext-pl-0:not([style*=padding]) {
+			padding-left: 0 !important
+		}
+
+		.ext-pl-base:not([style*=padding]) {
+			padding-left: var(--wp--style--block-gap, 1.75rem) !important
+		}
+
+		.ext-pl-lg:not([style*=padding]) {
+			padding-left: var(--extendify--spacing--large, 3rem) !important
+		}
+
+		.ext-text-left {
+			text-align: left !important
+		}
+
+		.ext-text-center {
+			text-align: center !important
+		}
+
+		.ext-text-right {
+			text-align: right !important
+		}
+
+		.ext-leading-none {
+			line-height: 1 !important
+		}
+
+		.ext-leading-tight {
+			line-height: 1.25 !important
+		}
+
+		.ext-leading-snug {
+			line-height: 1.375 !important
+		}
+
+		.ext-leading-normal {
+			line-height: 1.5 !important
+		}
+
+		.ext-leading-relaxed {
+			line-height: 1.625 !important
+		}
+
+		.ext-leading-loose {
+			line-height: 2 !important
+		}
+
+		.clip-path--rhombus img {
+			-webkit-clip-path: polygon(15% 6%, 80% 29%, 84% 93%, 23% 69%);
+			clip-path: polygon(15% 6%, 80% 29%, 84% 93%, 23% 69%)
+		}
+
+		.clip-path--diamond img {
+			-webkit-clip-path: polygon(5% 29%, 60% 2%, 91% 64%, 36% 89%);
+			clip-path: polygon(5% 29%, 60% 2%, 91% 64%, 36% 89%)
+		}
+
+		.clip-path--rhombus-alt img {
+			-webkit-clip-path: polygon(14% 9%, 85% 24%, 91% 89%, 19% 76%);
+			clip-path: polygon(14% 9%, 85% 24%, 91% 89%, 19% 76%)
+		}
+
+		.wp-block-columns[class*=fullwidth-cols] {
+			margin-bottom: unset
+		}
+
+		.wp-block-column.editor\:pointer-events-none {
+			margin-bottom: 0 !important;
+			margin-top: 0 !important
+		}
+
+		.is-root-container.block-editor-block-list__layout>[data-align=full]:not(:first-of-type)>.wp-block-column.editor\:pointer-events-none,
+		.is-root-container.block-editor-block-list__layout>[data-align=wide]>.wp-block-column.editor\:pointer-events-none {
+			margin-top: calc(var(--wp--style--block-gap, 28px)*-1) !important
+		}
+
+		.ext .wp-block-columns .wp-block-column[style*=padding] {
+			padding-left: 0 !important;
+			padding-right: 0 !important
+		}
+
+		.ext .wp-block-columns+.wp-block-columns:not([class*=mt-]):not([class*=my-]):not([style*=margin]) {
+			margin-top: 0 !important
+		}
+
+		[class*=fullwidth-cols] .wp-block-column:first-child,
+		[class*=fullwidth-cols] .wp-block-group:first-child {
+			margin-top: 0
+		}
+
+		[class*=fullwidth-cols] .wp-block-column:last-child,
+		[class*=fullwidth-cols] .wp-block-group:last-child {
+			margin-bottom: 0
+		}
+
+		[class*=fullwidth-cols] .wp-block-column:first-child>*,
+		[class*=fullwidth-cols] .wp-block-column>:first-child {
+			margin-top: 0
+		}
+
+		.ext .is-not-stacked-on-mobile .wp-block-column,
+		[class*=fullwidth-cols] .wp-block-column>:last-child {
+			margin-bottom: 0
+		}
+
+		.wp-block-columns[class*=fullwidth-cols]:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:last-child) {
+			margin-bottom: var(--wp--style--block-gap, 1.75rem)
+		}
+
+		@media (min-width:782px) {
+			.wp-block-columns[class*=fullwidth-cols]:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:last-child) {
+				margin-bottom: 0
+			}
+		}
+
+		.wp-block-columns[class*=fullwidth-cols].is-not-stacked-on-mobile>.wp-block-column {
+			margin-bottom: 0 !important
+		}
+
+		@media (min-width:600px) and (max-width:781px) {
+			.wp-block-columns[class*=fullwidth-cols]:not(.is-not-stacked-on-mobile)>.wp-block-column:nth-child(2n) {
+				margin-left: var(--wp--style--block-gap, 2em)
+			}
+		}
+
+		@media (max-width:781px) {
+			.tablet\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile) {
+				flex-wrap: wrap
+			}
+
+			.tablet\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column,
+			.tablet\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not([style*=margin]) {
+				margin-left: 0 !important
+			}
+
+			.tablet\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+				flex-basis: 100% !important
+			}
+		}
+
+		@media (max-width:1079px) {
+			.desktop\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile) {
+				flex-wrap: wrap
+			}
+
+			.desktop\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column,
+			.desktop\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not([style*=margin]) {
+				margin-left: 0 !important
+			}
+
+			.desktop\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+				flex-basis: 100% !important
+			}
+
+			.desktop\:fullwidth-cols.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:last-child) {
+				margin-bottom: var(--wp--style--block-gap, 1.75rem) !important
+			}
+		}
+
+		.direction-rtl {
+			direction: rtl
+		}
+
+		.direction-ltr {
+			direction: ltr
+		}
+
+		.is-style-inline-list {
+			padding-left: 0 !important
+		}
+
+		.is-style-inline-list li {
+			list-style-type: none !important
+		}
+
+		@media (min-width:782px) {
+			.is-style-inline-list li {
+				display: inline !important;
+				margin-right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+		}
+
+		@media (min-width:782px) {
+			.is-style-inline-list li:first-child {
+				margin-left: 0 !important
+			}
+		}
+
+		@media (min-width:782px) {
+			.is-style-inline-list li:last-child {
+				margin-right: 0 !important
+			}
+		}
+
+		.bring-to-front {
+			position: relative;
+			z-index: 10
+		}
+
+		.text-stroke {
+			-webkit-text-stroke-color: var(--wp--preset--color--background)
+		}
+
+		.text-stroke,
+		.text-stroke--primary {
+			-webkit-text-stroke-width: var(--wp--custom--typography--text-stroke-width, 2px)
+		}
+
+		.text-stroke--primary {
+			-webkit-text-stroke-color: var(--wp--preset--color--primary)
+		}
+
+		.text-stroke--secondary {
+			-webkit-text-stroke-width: var(--wp--custom--typography--text-stroke-width, 2px);
+			-webkit-text-stroke-color: var(--wp--preset--color--secondary)
+		}
+
+		.editor\:no-caption .block-editor-rich-text__editable {
+			display: none !important
+		}
+
+		.editor\:no-inserter .wp-block-column:not(.is-selected)>.block-list-appender,
+		.editor\:no-inserter .wp-block-cover__inner-container>.block-list-appender,
+		.editor\:no-inserter .wp-block-group__inner-container>.block-list-appender,
+		.editor\:no-inserter>.block-list-appender {
+			display: none
+		}
+
+		.editor\:no-resize .components-resizable-box__handle,
+		.editor\:no-resize .components-resizable-box__handle:after,
+		.editor\:no-resize .components-resizable-box__side-handle:before {
+			display: none;
+			pointer-events: none
+		}
+
+		.editor\:no-resize .components-resizable-box__container {
+			display: block
+		}
+
+		.editor\:pointer-events-none {
+			pointer-events: none
+		}
+
+		.is-style-angled {
+			justify-content: flex-end
+		}
+
+		.ext .is-style-angled>[class*=_inner-container],
+		.is-style-angled {
+			align-items: center
+		}
+
+		.is-style-angled .wp-block-cover__image-background,
+		.is-style-angled .wp-block-cover__video-background {
+			-webkit-clip-path: polygon(0 0, 30% 0, 50% 100%, 0 100%);
+			clip-path: polygon(0 0, 30% 0, 50% 100%, 0 100%);
+			z-index: 1
+		}
+
+		@media (min-width:782px) {
+
+			.is-style-angled .wp-block-cover__image-background,
+			.is-style-angled .wp-block-cover__video-background {
+				-webkit-clip-path: polygon(0 0, 55% 0, 65% 100%, 0 100%);
+				clip-path: polygon(0 0, 55% 0, 65% 100%, 0 100%)
+			}
+		}
+
+		.has-foreground-color {
+			color: var(--wp--preset--color--foreground, #000) !important
+		}
+
+		.has-foreground-background-color {
+			background-color: var(--wp--preset--color--foreground, #000) !important
+		}
+
+		.has-background-color {
+			color: var(--wp--preset--color--background, #fff) !important
+		}
+
+		.has-background-background-color {
+			background-color: var(--wp--preset--color--background, #fff) !important
+		}
+
+		.has-primary-color {
+			color: var(--wp--preset--color--primary, #4b5563) !important
+		}
+
+		.has-primary-background-color {
+			background-color: var(--wp--preset--color--primary, #4b5563) !important
+		}
+
+		.has-secondary-color {
+			color: var(--wp--preset--color--secondary, #9ca3af) !important
+		}
+
+		.has-secondary-background-color {
+			background-color: var(--wp--preset--color--secondary, #9ca3af) !important
+		}
+
+		.ext.has-text-color h1,
+		.ext.has-text-color h2,
+		.ext.has-text-color h3,
+		.ext.has-text-color h4,
+		.ext.has-text-color h5,
+		.ext.has-text-color h6,
+		.ext.has-text-color p {
+			color: currentColor
+		}
+
+		.has-white-color {
+			color: var(--wp--preset--color--white, #fff) !important
+		}
+
+		.has-black-color {
+			color: var(--wp--preset--color--black, #000) !important
+		}
+
+		.has-ext-foreground-background-color {
+			background-color: var(--wp--preset--color--foreground, var(--wp--preset--color--black, #000)) !important
+		}
+
+		.has-ext-primary-background-color {
+			background-color: var(--wp--preset--color--primary, var(--wp--preset--color--cyan-bluish-gray, #000)) !important
+		}
+
+		.wp-block-button__link.has-black-background-color {
+			border-color: var(--wp--preset--color--black, #000)
+		}
+
+		.wp-block-button__link.has-white-background-color {
+			border-color: var(--wp--preset--color--white, #fff)
+		}
+
+		.has-ext-small-font-size {
+			font-size: var(--wp--preset--font-size--ext-small) !important
+		}
+
+		.has-ext-medium-font-size {
+			font-size: var(--wp--preset--font-size--ext-medium) !important
+		}
+
+		.has-ext-large-font-size {
+			font-size: var(--wp--preset--font-size--ext-large) !important;
+			line-height: 1.2
+		}
+
+		.has-ext-x-large-font-size {
+			font-size: var(--wp--preset--font-size--ext-x-large) !important;
+			line-height: 1
+		}
+
+		.has-ext-xx-large-font-size {
+			font-size: var(--wp--preset--font-size--ext-xx-large) !important;
+			line-height: 1
+		}
+
+		.has-ext-x-large-font-size:not([style*=line-height]),
+		.has-ext-xx-large-font-size:not([style*=line-height]) {
+			line-height: 1.1
+		}
+
+		.ext .wp-block-group>* {
+			margin-bottom: 0;
+			margin-top: 0
+		}
+
+		.ext .wp-block-group>*+* {
+			margin-bottom: 0
+		}
+
+		.ext .wp-block-group>*+*,
+		.ext h2 {
+			margin-top: var(--wp--style--block-gap, 1.75rem)
+		}
+
+		.ext h2 {
+			margin-bottom: var(--wp--style--block-gap, 1.75rem)
+		}
+
+		.has-ext-x-large-font-size+h3,
+		.has-ext-x-large-font-size+p {
+			margin-top: .5rem
+		}
+
+		.ext .wp-block-buttons>.wp-block-button.wp-block-button__width-25 {
+			min-width: 12rem;
+			width: calc(25% - var(--wp--style--block-gap, .5em)*.75)
+		}
+
+		.ext .ext-grid>[class*=_inner-container] {
+			display: grid
+		}
+
+		.ext>[class*=_inner-container]>.ext-grid:not([class*=columns]),
+		.ext>[class*=_inner-container]>.wp-block>.ext-grid:not([class*=columns]) {
+			display: initial !important
+		}
+
+		.ext .ext-grid-cols-1>[class*=_inner-container] {
+			grid-template-columns: repeat(1, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-2>[class*=_inner-container] {
+			grid-template-columns: repeat(2, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-3>[class*=_inner-container] {
+			grid-template-columns: repeat(3, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-4>[class*=_inner-container] {
+			grid-template-columns: repeat(4, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-5>[class*=_inner-container] {
+			grid-template-columns: repeat(5, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-6>[class*=_inner-container] {
+			grid-template-columns: repeat(6, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-7>[class*=_inner-container] {
+			grid-template-columns: repeat(7, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-8>[class*=_inner-container] {
+			grid-template-columns: repeat(8, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-9>[class*=_inner-container] {
+			grid-template-columns: repeat(9, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-10>[class*=_inner-container] {
+			grid-template-columns: repeat(10, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-11>[class*=_inner-container] {
+			grid-template-columns: repeat(11, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-12>[class*=_inner-container] {
+			grid-template-columns: repeat(12, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-13>[class*=_inner-container] {
+			grid-template-columns: repeat(13, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-cols-none>[class*=_inner-container] {
+			grid-template-columns: none !important
+		}
+
+		.ext .ext-grid-rows-1>[class*=_inner-container] {
+			grid-template-rows: repeat(1, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-rows-2>[class*=_inner-container] {
+			grid-template-rows: repeat(2, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-rows-3>[class*=_inner-container] {
+			grid-template-rows: repeat(3, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-rows-4>[class*=_inner-container] {
+			grid-template-rows: repeat(4, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-rows-5>[class*=_inner-container] {
+			grid-template-rows: repeat(5, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-rows-6>[class*=_inner-container] {
+			grid-template-rows: repeat(6, minmax(0, 1fr)) !important
+		}
+
+		.ext .ext-grid-rows-none>[class*=_inner-container] {
+			grid-template-rows: none !important
+		}
+
+		.ext .ext-items-start>[class*=_inner-container] {
+			align-items: flex-start !important
+		}
+
+		.ext .ext-items-end>[class*=_inner-container] {
+			align-items: flex-end !important
+		}
+
+		.ext .ext-items-center>[class*=_inner-container] {
+			align-items: center !important
+		}
+
+		.ext .ext-items-baseline>[class*=_inner-container] {
+			align-items: baseline !important
+		}
+
+		.ext .ext-items-stretch>[class*=_inner-container] {
+			align-items: stretch !important
+		}
+
+		.ext.wp-block-group>:last-child {
+			margin-bottom: 0
+		}
+
+		.ext .wp-block-group__inner-container {
+			padding: 0 !important
+		}
+
+		.ext.has-background {
+			padding-left: var(--wp--style--block-gap, 1.75rem);
+			padding-right: var(--wp--style--block-gap, 1.75rem)
+		}
+
+		.ext [class*=inner-container]>.alignwide [class*=inner-container],
+		.ext [class*=inner-container]>[data-align=wide] [class*=inner-container] {
+			max-width: var(--responsive--alignwide-width, 120rem)
+		}
+
+		.ext [class*=inner-container]>.alignwide [class*=inner-container]>*,
+		.ext [class*=inner-container]>[data-align=wide] [class*=inner-container]>* {
+			max-width: 100% !important
+		}
+
+		.ext .wp-block-image {
+			position: relative;
+			text-align: center
+		}
+
+		.ext .wp-block-image img {
+			display: inline-block;
+			vertical-align: middle
+		}
+
+		body {
+			--extendify--spacing--large: var(--wp--custom--spacing--large, clamp(2em, 8vw, 8em));
+			--wp--preset--font-size--ext-small: 1rem;
+			--wp--preset--font-size--ext-medium: 1.125rem;
+			--wp--preset--font-size--ext-large: clamp(1.65rem, 3.5vw, 2.15rem);
+			--wp--preset--font-size--ext-x-large: clamp(3rem, 6vw, 4.75rem);
+			--wp--preset--font-size--ext-xx-large: clamp(3.25rem, 7.5vw, 5.75rem);
+			--wp--preset--color--black: #000;
+			--wp--preset--color--white: #fff
+		}
+
+		.ext * {
+			box-sizing: border-box
+		}
+
+		.block-editor-block-preview__content-iframe .ext [data-type="core/spacer"] .components-resizable-box__container {
+			background: transparent !important
+		}
+
+		.block-editor-block-preview__content-iframe .ext [data-type="core/spacer"] .block-library-spacer__resize-container:before {
+			display: none !important
+		}
+
+		.ext .wp-block-group__inner-container figure.wp-block-gallery.alignfull {
+			margin-bottom: unset;
+			margin-top: unset
+		}
+
+		.ext .alignwide {
+			margin-left: auto !important;
+			margin-right: auto !important
+		}
+
+		.is-root-container.block-editor-block-list__layout>[data-align=full]:not(:first-of-type)>.ext-my-0,
+		.is-root-container.block-editor-block-list__layout>[data-align=wide]>.ext-my-0:not([style*=margin]) {
+			margin-top: calc(var(--wp--style--block-gap, 28px)*-1) !important
+		}
+
+		.block-editor-block-preview__content-iframe .preview\:min-h-50 {
+			min-height: 50vw !important
+		}
+
+		.block-editor-block-preview__content-iframe .preview\:min-h-60 {
+			min-height: 60vw !important
+		}
+
+		.block-editor-block-preview__content-iframe .preview\:min-h-70 {
+			min-height: 70vw !important
+		}
+
+		.block-editor-block-preview__content-iframe .preview\:min-h-80 {
+			min-height: 80vw !important
+		}
+
+		.block-editor-block-preview__content-iframe .preview\:min-h-100 {
+			min-height: 100vw !important
+		}
+
+		.ext-mr-0.alignfull:not([style*=margin]):not([style*=margin]) {
+			margin-right: 0 !important
+		}
+
+		.ext-ml-0:not([style*=margin]):not([style*=margin]) {
+			margin-left: 0 !important
+		}
+
+		.is-root-container .wp-block[data-align=full]>.ext-mx-0:not([style*=margin]):not([style*=margin]) {
+			margin-left: calc(var(--wp--custom--spacing--outer, 0)*1) !important;
+			margin-right: calc(var(--wp--custom--spacing--outer, 0)*1) !important;
+			overflow: hidden;
+			width: unset
+		}
+
+		@media (min-width:782px) {
+			.tablet\:ext-absolute {
+				position: absolute !important
+			}
+
+			.tablet\:ext-relative {
+				position: relative !important
+			}
+
+			.tablet\:ext-top-base {
+				top: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-top-lg {
+				top: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--top-base {
+				top: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--top-lg {
+				top: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-right-base {
+				right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-right-lg {
+				right: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--right-base {
+				right: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--right-lg {
+				right: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-bottom-base {
+				bottom: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-bottom-lg {
+				bottom: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--bottom-base {
+				bottom: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--bottom-lg {
+				bottom: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-left-base {
+				left: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-left-lg {
+				left: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--left-base {
+				left: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--left-lg {
+				left: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-order-1 {
+				order: 1 !important
+			}
+
+			.tablet\:ext-order-2 {
+				order: 2 !important
+			}
+
+			.tablet\:ext-m-0:not([style*=margin]) {
+				margin: 0 !important
+			}
+
+			.tablet\:ext-m-auto:not([style*=margin]) {
+				margin: auto !important
+			}
+
+			.tablet\:ext-m-base:not([style*=margin]) {
+				margin: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-m-lg:not([style*=margin]) {
+				margin: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--m-base:not([style*=margin]) {
+				margin: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--m-lg:not([style*=margin]) {
+				margin: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-mx-0:not([style*=margin]) {
+				margin-left: 0 !important;
+				margin-right: 0 !important
+			}
+
+			.tablet\:ext-mx-auto:not([style*=margin]) {
+				margin-left: auto !important;
+				margin-right: auto !important
+			}
+
+			.tablet\:ext-mx-base:not([style*=margin]) {
+				margin-left: var(--wp--style--block-gap, 1.75rem) !important;
+				margin-right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-mx-lg:not([style*=margin]) {
+				margin-left: var(--extendify--spacing--large, 3rem) !important;
+				margin-right: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--mx-base:not([style*=margin]) {
+				margin-left: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important;
+				margin-right: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--mx-lg:not([style*=margin]) {
+				margin-left: calc(var(--extendify--spacing--large, 3rem)*-1) !important;
+				margin-right: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-my-0:not([style*=margin]) {
+				margin-bottom: 0 !important;
+				margin-top: 0 !important
+			}
+
+			.tablet\:ext-my-auto:not([style*=margin]) {
+				margin-bottom: auto !important;
+				margin-top: auto !important
+			}
+
+			.tablet\:ext-my-base:not([style*=margin]) {
+				margin-bottom: var(--wp--style--block-gap, 1.75rem) !important;
+				margin-top: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-my-lg:not([style*=margin]) {
+				margin-bottom: var(--extendify--spacing--large, 3rem) !important;
+				margin-top: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--my-base:not([style*=margin]) {
+				margin-bottom: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important;
+				margin-top: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--my-lg:not([style*=margin]) {
+				margin-bottom: calc(var(--extendify--spacing--large, 3rem)*-1) !important;
+				margin-top: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-mt-0:not([style*=margin]) {
+				margin-top: 0 !important
+			}
+
+			.tablet\:ext-mt-auto:not([style*=margin]) {
+				margin-top: auto !important
+			}
+
+			.tablet\:ext-mt-base:not([style*=margin]) {
+				margin-top: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-mt-lg:not([style*=margin]) {
+				margin-top: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--mt-base:not([style*=margin]) {
+				margin-top: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--mt-lg:not([style*=margin]) {
+				margin-top: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-mr-0:not([style*=margin]) {
+				margin-right: 0 !important
+			}
+
+			.tablet\:ext-mr-auto:not([style*=margin]) {
+				margin-right: auto !important
+			}
+
+			.tablet\:ext-mr-base:not([style*=margin]) {
+				margin-right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-mr-lg:not([style*=margin]) {
+				margin-right: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--mr-base:not([style*=margin]) {
+				margin-right: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--mr-lg:not([style*=margin]) {
+				margin-right: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-mb-0:not([style*=margin]) {
+				margin-bottom: 0 !important
+			}
+
+			.tablet\:ext-mb-auto:not([style*=margin]) {
+				margin-bottom: auto !important
+			}
+
+			.tablet\:ext-mb-base:not([style*=margin]) {
+				margin-bottom: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-mb-lg:not([style*=margin]) {
+				margin-bottom: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--mb-base:not([style*=margin]) {
+				margin-bottom: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--mb-lg:not([style*=margin]) {
+				margin-bottom: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-ml-0:not([style*=margin]) {
+				margin-left: 0 !important
+			}
+
+			.tablet\:ext-ml-auto:not([style*=margin]) {
+				margin-left: auto !important
+			}
+
+			.tablet\:ext-ml-base:not([style*=margin]) {
+				margin-left: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-ml-lg:not([style*=margin]) {
+				margin-left: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext--ml-base:not([style*=margin]) {
+				margin-left: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.tablet\:ext--ml-lg:not([style*=margin]) {
+				margin-left: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.tablet\:ext-block {
+				display: block !important
+			}
+
+			.tablet\:ext-inline-block {
+				display: inline-block !important
+			}
+
+			.tablet\:ext-inline {
+				display: inline !important
+			}
+
+			.tablet\:ext-flex {
+				display: flex !important
+			}
+
+			.tablet\:ext-inline-flex {
+				display: inline-flex !important
+			}
+
+			.tablet\:ext-grid {
+				display: grid !important
+			}
+
+			.tablet\:ext-inline-grid {
+				display: inline-grid !important
+			}
+
+			.tablet\:ext-hidden {
+				display: none !important
+			}
+
+			.tablet\:ext-w-auto {
+				width: auto !important
+			}
+
+			.tablet\:ext-w-full {
+				width: 100% !important
+			}
+
+			.tablet\:ext-max-w-full {
+				max-width: 100% !important
+			}
+
+			.tablet\:ext-flex-1 {
+				flex: 1 1 0% !important
+			}
+
+			.tablet\:ext-flex-auto {
+				flex: 1 1 auto !important
+			}
+
+			.tablet\:ext-flex-initial {
+				flex: 0 1 auto !important
+			}
+
+			.tablet\:ext-flex-none {
+				flex: none !important
+			}
+
+			.tablet\:ext-flex-shrink-0 {
+				flex-shrink: 0 !important
+			}
+
+			.tablet\:ext-flex-shrink {
+				flex-shrink: 1 !important
+			}
+
+			.tablet\:ext-flex-grow-0 {
+				flex-grow: 0 !important
+			}
+
+			.tablet\:ext-flex-grow {
+				flex-grow: 1 !important
+			}
+
+			.tablet\:ext-list-none {
+				list-style-type: none !important
+			}
+
+			.tablet\:ext-grid-cols-1 {
+				grid-template-columns: repeat(1, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-2 {
+				grid-template-columns: repeat(2, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-3 {
+				grid-template-columns: repeat(3, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-4 {
+				grid-template-columns: repeat(4, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-5 {
+				grid-template-columns: repeat(5, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-6 {
+				grid-template-columns: repeat(6, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-7 {
+				grid-template-columns: repeat(7, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-8 {
+				grid-template-columns: repeat(8, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-9 {
+				grid-template-columns: repeat(9, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-10 {
+				grid-template-columns: repeat(10, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-11 {
+				grid-template-columns: repeat(11, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-12 {
+				grid-template-columns: repeat(12, minmax(0, 1fr)) !important
+			}
+
+			.tablet\:ext-grid-cols-none {
+				grid-template-columns: none !important
+			}
+
+			.tablet\:ext-flex-row {
+				flex-direction: row !important
+			}
+
+			.tablet\:ext-flex-row-reverse {
+				flex-direction: row-reverse !important
+			}
+
+			.tablet\:ext-flex-col {
+				flex-direction: column !important
+			}
+
+			.tablet\:ext-flex-col-reverse {
+				flex-direction: column-reverse !important
+			}
+
+			.tablet\:ext-flex-wrap {
+				flex-wrap: wrap !important
+			}
+
+			.tablet\:ext-flex-wrap-reverse {
+				flex-wrap: wrap-reverse !important
+			}
+
+			.tablet\:ext-flex-nowrap {
+				flex-wrap: nowrap !important
+			}
+
+			.tablet\:ext-items-start {
+				align-items: flex-start !important
+			}
+
+			.tablet\:ext-items-end {
+				align-items: flex-end !important
+			}
+
+			.tablet\:ext-items-center {
+				align-items: center !important
+			}
+
+			.tablet\:ext-items-baseline {
+				align-items: baseline !important
+			}
+
+			.tablet\:ext-items-stretch {
+				align-items: stretch !important
+			}
+
+			.tablet\:ext-justify-start {
+				justify-content: flex-start !important
+			}
+
+			.tablet\:ext-justify-end {
+				justify-content: flex-end !important
+			}
+
+			.tablet\:ext-justify-center {
+				justify-content: center !important
+			}
+
+			.tablet\:ext-justify-between {
+				justify-content: space-between !important
+			}
+
+			.tablet\:ext-justify-around {
+				justify-content: space-around !important
+			}
+
+			.tablet\:ext-justify-evenly {
+				justify-content: space-evenly !important
+			}
+
+			.tablet\:ext-justify-items-start {
+				justify-items: start !important
+			}
+
+			.tablet\:ext-justify-items-end {
+				justify-items: end !important
+			}
+
+			.tablet\:ext-justify-items-center {
+				justify-items: center !important
+			}
+
+			.tablet\:ext-justify-items-stretch {
+				justify-items: stretch !important
+			}
+
+			.tablet\:ext-justify-self-auto {
+				justify-self: auto !important
+			}
+
+			.tablet\:ext-justify-self-start {
+				justify-self: start !important
+			}
+
+			.tablet\:ext-justify-self-end {
+				justify-self: end !important
+			}
+
+			.tablet\:ext-justify-self-center {
+				justify-self: center !important
+			}
+
+			.tablet\:ext-justify-self-stretch {
+				justify-self: stretch !important
+			}
+
+			.tablet\:ext-p-0:not([style*=padding]) {
+				padding: 0 !important
+			}
+
+			.tablet\:ext-p-base:not([style*=padding]) {
+				padding: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-p-lg:not([style*=padding]) {
+				padding: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext-px-0:not([style*=padding]) {
+				padding-left: 0 !important;
+				padding-right: 0 !important
+			}
+
+			.tablet\:ext-px-base:not([style*=padding]) {
+				padding-left: var(--wp--style--block-gap, 1.75rem) !important;
+				padding-right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-px-lg:not([style*=padding]) {
+				padding-left: var(--extendify--spacing--large, 3rem) !important;
+				padding-right: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext-py-0:not([style*=padding]) {
+				padding-bottom: 0 !important;
+				padding-top: 0 !important
+			}
+
+			.tablet\:ext-py-base:not([style*=padding]) {
+				padding-bottom: var(--wp--style--block-gap, 1.75rem) !important;
+				padding-top: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-py-lg:not([style*=padding]) {
+				padding-bottom: var(--extendify--spacing--large, 3rem) !important;
+				padding-top: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext-pt-0:not([style*=padding]) {
+				padding-top: 0 !important
+			}
+
+			.tablet\:ext-pt-base:not([style*=padding]) {
+				padding-top: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-pt-lg:not([style*=padding]) {
+				padding-top: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext-pr-0:not([style*=padding]) {
+				padding-right: 0 !important
+			}
+
+			.tablet\:ext-pr-base:not([style*=padding]) {
+				padding-right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-pr-lg:not([style*=padding]) {
+				padding-right: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext-pb-0:not([style*=padding]) {
+				padding-bottom: 0 !important
+			}
+
+			.tablet\:ext-pb-base:not([style*=padding]) {
+				padding-bottom: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-pb-lg:not([style*=padding]) {
+				padding-bottom: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext-pl-0:not([style*=padding]) {
+				padding-left: 0 !important
+			}
+
+			.tablet\:ext-pl-base:not([style*=padding]) {
+				padding-left: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.tablet\:ext-pl-lg:not([style*=padding]) {
+				padding-left: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.tablet\:ext-text-left {
+				text-align: left !important
+			}
+
+			.tablet\:ext-text-center {
+				text-align: center !important
+			}
+
+			.tablet\:ext-text-right {
+				text-align: right !important
+			}
+		}
+
+		@media (min-width:1080px) {
+			.desktop\:ext-absolute {
+				position: absolute !important
+			}
+
+			.desktop\:ext-relative {
+				position: relative !important
+			}
+
+			.desktop\:ext-top-base {
+				top: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-top-lg {
+				top: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--top-base {
+				top: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--top-lg {
+				top: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-right-base {
+				right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-right-lg {
+				right: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--right-base {
+				right: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--right-lg {
+				right: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-bottom-base {
+				bottom: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-bottom-lg {
+				bottom: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--bottom-base {
+				bottom: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--bottom-lg {
+				bottom: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-left-base {
+				left: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-left-lg {
+				left: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--left-base {
+				left: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--left-lg {
+				left: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-order-1 {
+				order: 1 !important
+			}
+
+			.desktop\:ext-order-2 {
+				order: 2 !important
+			}
+
+			.desktop\:ext-m-0:not([style*=margin]) {
+				margin: 0 !important
+			}
+
+			.desktop\:ext-m-auto:not([style*=margin]) {
+				margin: auto !important
+			}
+
+			.desktop\:ext-m-base:not([style*=margin]) {
+				margin: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-m-lg:not([style*=margin]) {
+				margin: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--m-base:not([style*=margin]) {
+				margin: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--m-lg:not([style*=margin]) {
+				margin: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-mx-0:not([style*=margin]) {
+				margin-left: 0 !important;
+				margin-right: 0 !important
+			}
+
+			.desktop\:ext-mx-auto:not([style*=margin]) {
+				margin-left: auto !important;
+				margin-right: auto !important
+			}
+
+			.desktop\:ext-mx-base:not([style*=margin]) {
+				margin-left: var(--wp--style--block-gap, 1.75rem) !important;
+				margin-right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-mx-lg:not([style*=margin]) {
+				margin-left: var(--extendify--spacing--large, 3rem) !important;
+				margin-right: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--mx-base:not([style*=margin]) {
+				margin-left: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important;
+				margin-right: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--mx-lg:not([style*=margin]) {
+				margin-left: calc(var(--extendify--spacing--large, 3rem)*-1) !important;
+				margin-right: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-my-0:not([style*=margin]) {
+				margin-bottom: 0 !important;
+				margin-top: 0 !important
+			}
+
+			.desktop\:ext-my-auto:not([style*=margin]) {
+				margin-bottom: auto !important;
+				margin-top: auto !important
+			}
+
+			.desktop\:ext-my-base:not([style*=margin]) {
+				margin-bottom: var(--wp--style--block-gap, 1.75rem) !important;
+				margin-top: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-my-lg:not([style*=margin]) {
+				margin-bottom: var(--extendify--spacing--large, 3rem) !important;
+				margin-top: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--my-base:not([style*=margin]) {
+				margin-bottom: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important;
+				margin-top: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--my-lg:not([style*=margin]) {
+				margin-bottom: calc(var(--extendify--spacing--large, 3rem)*-1) !important;
+				margin-top: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-mt-0:not([style*=margin]) {
+				margin-top: 0 !important
+			}
+
+			.desktop\:ext-mt-auto:not([style*=margin]) {
+				margin-top: auto !important
+			}
+
+			.desktop\:ext-mt-base:not([style*=margin]) {
+				margin-top: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-mt-lg:not([style*=margin]) {
+				margin-top: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--mt-base:not([style*=margin]) {
+				margin-top: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--mt-lg:not([style*=margin]) {
+				margin-top: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-mr-0:not([style*=margin]) {
+				margin-right: 0 !important
+			}
+
+			.desktop\:ext-mr-auto:not([style*=margin]) {
+				margin-right: auto !important
+			}
+
+			.desktop\:ext-mr-base:not([style*=margin]) {
+				margin-right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-mr-lg:not([style*=margin]) {
+				margin-right: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--mr-base:not([style*=margin]) {
+				margin-right: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--mr-lg:not([style*=margin]) {
+				margin-right: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-mb-0:not([style*=margin]) {
+				margin-bottom: 0 !important
+			}
+
+			.desktop\:ext-mb-auto:not([style*=margin]) {
+				margin-bottom: auto !important
+			}
+
+			.desktop\:ext-mb-base:not([style*=margin]) {
+				margin-bottom: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-mb-lg:not([style*=margin]) {
+				margin-bottom: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--mb-base:not([style*=margin]) {
+				margin-bottom: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--mb-lg:not([style*=margin]) {
+				margin-bottom: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-ml-0:not([style*=margin]) {
+				margin-left: 0 !important
+			}
+
+			.desktop\:ext-ml-auto:not([style*=margin]) {
+				margin-left: auto !important
+			}
+
+			.desktop\:ext-ml-base:not([style*=margin]) {
+				margin-left: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-ml-lg:not([style*=margin]) {
+				margin-left: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext--ml-base:not([style*=margin]) {
+				margin-left: calc(var(--wp--style--block-gap, 1.75rem)*-1) !important
+			}
+
+			.desktop\:ext--ml-lg:not([style*=margin]) {
+				margin-left: calc(var(--extendify--spacing--large, 3rem)*-1) !important
+			}
+
+			.desktop\:ext-block {
+				display: block !important
+			}
+
+			.desktop\:ext-inline-block {
+				display: inline-block !important
+			}
+
+			.desktop\:ext-inline {
+				display: inline !important
+			}
+
+			.desktop\:ext-flex {
+				display: flex !important
+			}
+
+			.desktop\:ext-inline-flex {
+				display: inline-flex !important
+			}
+
+			.desktop\:ext-grid {
+				display: grid !important
+			}
+
+			.desktop\:ext-inline-grid {
+				display: inline-grid !important
+			}
+
+			.desktop\:ext-hidden {
+				display: none !important
+			}
+
+			.desktop\:ext-w-auto {
+				width: auto !important
+			}
+
+			.desktop\:ext-w-full {
+				width: 100% !important
+			}
+
+			.desktop\:ext-max-w-full {
+				max-width: 100% !important
+			}
+
+			.desktop\:ext-flex-1 {
+				flex: 1 1 0% !important
+			}
+
+			.desktop\:ext-flex-auto {
+				flex: 1 1 auto !important
+			}
+
+			.desktop\:ext-flex-initial {
+				flex: 0 1 auto !important
+			}
+
+			.desktop\:ext-flex-none {
+				flex: none !important
+			}
+
+			.desktop\:ext-flex-shrink-0 {
+				flex-shrink: 0 !important
+			}
+
+			.desktop\:ext-flex-shrink {
+				flex-shrink: 1 !important
+			}
+
+			.desktop\:ext-flex-grow-0 {
+				flex-grow: 0 !important
+			}
+
+			.desktop\:ext-flex-grow {
+				flex-grow: 1 !important
+			}
+
+			.desktop\:ext-list-none {
+				list-style-type: none !important
+			}
+
+			.desktop\:ext-grid-cols-1 {
+				grid-template-columns: repeat(1, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-2 {
+				grid-template-columns: repeat(2, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-3 {
+				grid-template-columns: repeat(3, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-4 {
+				grid-template-columns: repeat(4, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-5 {
+				grid-template-columns: repeat(5, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-6 {
+				grid-template-columns: repeat(6, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-7 {
+				grid-template-columns: repeat(7, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-8 {
+				grid-template-columns: repeat(8, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-9 {
+				grid-template-columns: repeat(9, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-10 {
+				grid-template-columns: repeat(10, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-11 {
+				grid-template-columns: repeat(11, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-12 {
+				grid-template-columns: repeat(12, minmax(0, 1fr)) !important
+			}
+
+			.desktop\:ext-grid-cols-none {
+				grid-template-columns: none !important
+			}
+
+			.desktop\:ext-flex-row {
+				flex-direction: row !important
+			}
+
+			.desktop\:ext-flex-row-reverse {
+				flex-direction: row-reverse !important
+			}
+
+			.desktop\:ext-flex-col {
+				flex-direction: column !important
+			}
+
+			.desktop\:ext-flex-col-reverse {
+				flex-direction: column-reverse !important
+			}
+
+			.desktop\:ext-flex-wrap {
+				flex-wrap: wrap !important
+			}
+
+			.desktop\:ext-flex-wrap-reverse {
+				flex-wrap: wrap-reverse !important
+			}
+
+			.desktop\:ext-flex-nowrap {
+				flex-wrap: nowrap !important
+			}
+
+			.desktop\:ext-items-start {
+				align-items: flex-start !important
+			}
+
+			.desktop\:ext-items-end {
+				align-items: flex-end !important
+			}
+
+			.desktop\:ext-items-center {
+				align-items: center !important
+			}
+
+			.desktop\:ext-items-baseline {
+				align-items: baseline !important
+			}
+
+			.desktop\:ext-items-stretch {
+				align-items: stretch !important
+			}
+
+			.desktop\:ext-justify-start {
+				justify-content: flex-start !important
+			}
+
+			.desktop\:ext-justify-end {
+				justify-content: flex-end !important
+			}
+
+			.desktop\:ext-justify-center {
+				justify-content: center !important
+			}
+
+			.desktop\:ext-justify-between {
+				justify-content: space-between !important
+			}
+
+			.desktop\:ext-justify-around {
+				justify-content: space-around !important
+			}
+
+			.desktop\:ext-justify-evenly {
+				justify-content: space-evenly !important
+			}
+
+			.desktop\:ext-justify-items-start {
+				justify-items: start !important
+			}
+
+			.desktop\:ext-justify-items-end {
+				justify-items: end !important
+			}
+
+			.desktop\:ext-justify-items-center {
+				justify-items: center !important
+			}
+
+			.desktop\:ext-justify-items-stretch {
+				justify-items: stretch !important
+			}
+
+			.desktop\:ext-justify-self-auto {
+				justify-self: auto !important
+			}
+
+			.desktop\:ext-justify-self-start {
+				justify-self: start !important
+			}
+
+			.desktop\:ext-justify-self-end {
+				justify-self: end !important
+			}
+
+			.desktop\:ext-justify-self-center {
+				justify-self: center !important
+			}
+
+			.desktop\:ext-justify-self-stretch {
+				justify-self: stretch !important
+			}
+
+			.desktop\:ext-p-0:not([style*=padding]) {
+				padding: 0 !important
+			}
+
+			.desktop\:ext-p-base:not([style*=padding]) {
+				padding: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-p-lg:not([style*=padding]) {
+				padding: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext-px-0:not([style*=padding]) {
+				padding-left: 0 !important;
+				padding-right: 0 !important
+			}
+
+			.desktop\:ext-px-base:not([style*=padding]) {
+				padding-left: var(--wp--style--block-gap, 1.75rem) !important;
+				padding-right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-px-lg:not([style*=padding]) {
+				padding-left: var(--extendify--spacing--large, 3rem) !important;
+				padding-right: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext-py-0:not([style*=padding]) {
+				padding-bottom: 0 !important;
+				padding-top: 0 !important
+			}
+
+			.desktop\:ext-py-base:not([style*=padding]) {
+				padding-bottom: var(--wp--style--block-gap, 1.75rem) !important;
+				padding-top: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-py-lg:not([style*=padding]) {
+				padding-bottom: var(--extendify--spacing--large, 3rem) !important;
+				padding-top: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext-pt-0:not([style*=padding]) {
+				padding-top: 0 !important
+			}
+
+			.desktop\:ext-pt-base:not([style*=padding]) {
+				padding-top: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-pt-lg:not([style*=padding]) {
+				padding-top: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext-pr-0:not([style*=padding]) {
+				padding-right: 0 !important
+			}
+
+			.desktop\:ext-pr-base:not([style*=padding]) {
+				padding-right: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-pr-lg:not([style*=padding]) {
+				padding-right: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext-pb-0:not([style*=padding]) {
+				padding-bottom: 0 !important
+			}
+
+			.desktop\:ext-pb-base:not([style*=padding]) {
+				padding-bottom: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-pb-lg:not([style*=padding]) {
+				padding-bottom: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext-pl-0:not([style*=padding]) {
+				padding-left: 0 !important
+			}
+
+			.desktop\:ext-pl-base:not([style*=padding]) {
+				padding-left: var(--wp--style--block-gap, 1.75rem) !important
+			}
+
+			.desktop\:ext-pl-lg:not([style*=padding]) {
+				padding-left: var(--extendify--spacing--large, 3rem) !important
+			}
+
+			.desktop\:ext-text-left {
+				text-align: left !important
+			}
+
+			.desktop\:ext-text-center {
+				text-align: center !important
+			}
+
+			.desktop\:ext-text-right {
+				text-align: right !important
+			}
+		}
+	</style>
+
+	<style id='woocommerce-inline-inline-css' type='text/css'>
+		.woocommerce form .form-row .required {
+			visibility: visible;
+		}
+	</style>
+
+
+
+
+
+
+
+	<style id='woosw-frontend-inline-css' type='text/css'>
+		.woosw-popup .woosw-popup-inner .woosw-popup-content .woosw-popup-content-bot .woosw-notice {
+			background-color: #ff2556;
+		}
+
+		.woosw-popup .woosw-popup-inner .woosw-popup-content .woosw-popup-content-bot .woosw-popup-content-bot-inner .woosw-page a:hover,
+		.woosw-popup .woosw-popup-inner .woosw-popup-content .woosw-popup-content-bot .woosw-popup-content-bot-inner .woosw-continue:hover {
+			color: #ff2556;
+		}
+	</style>
+
+
+
+	<!--[if lt IE 9]>
+<link rel='stylesheet' id='wrish-ie-css'  href='https://wpbingosite.com/wordpress/wrish/wp-content/themes/wrish/css/ie.css?ver=20131205' type='text/css' media='all' />
+<![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<link rel='stylesheet' id='elementor-frontend-legacy-css'
+		href='wp-content/uploads/elementor/css/custom-frontend-legacy.min%EF%B9%96ver=3.6.5.css' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='elementor-frontend-css'
+		href='wp-content/uploads/elementor/css/custom-frontend.min%EF%B9%96ver=1652345437.css' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='elementor-post-9482-css'
+		href='wp-content/uploads/elementor/css/post-9482%EF%B9%96ver=1652345433.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='elementor-post-9601-css'
+		href='wp-content/uploads/elementor/css/post-9601%EF%B9%96ver=1652345472.css' type='text/css' media='all' />
+
+	<script type="text/template" id="tmpl-variation-template">
+	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
+	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div>
+	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
+</script>
+	<script type="text/template" id="tmpl-unavailable-variation-template">
+	<p>Sorry, this product is unavailable. Please choose a different combination.</p>
+</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-includes/js/jquery/jquery.min%EF%B9%96ver=3.6.0.js' id='jquery-core-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-includes/js/jquery/jquery-migrate.min%EF%B9%96ver=3.3.2.js' id='jquery-migrate-js' defer></script>
+	<script type='text/javascript' id='buy-together-frontend-js-extra'>
+		/* <![CDATA[ */
+		var buy_together = { "ajaxurl": "https:\/\/wpbingosite.com\/wordpress\/wrish\/wp-admin\/admin-ajax.php", "security": "dfc512e06e", "text": { "for_num_of_items": "For {{number}} item(s)", "add_to_cart_text": "Add All To Cart", "adding_to_cart_text": "Adding To Cart...", "view_cart": "View cart", "no_product_selected_text": "You must select at least one product", "add_to_cart_success": "{{number}} product(s) was successfully added to your cart.", "add_to_cart_fail_single": "One product is out of stock.", "add_to_cart_fail_plural": "{{number}} products were out of stocks." }, "price_format": "%1$s%2$s", "price_decimals": "2", "price_thousand_separator": ",", "price_decimal_separator": ".", "currency_symbol": "$", "wc_tax_enabled": "", "cart_url": "https:\/\/wpbingosite.com\/wordpress\/wrish\/cart\/", "ex_tax_or_vat": "" };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/plugins/wpbingo/lib/buy-together/assets/js/frontend%EF%B9%96ver=1675850677.js'
+		id='buy-together-frontend-js' defer></script>
+	<link rel="https://api.w.org/" href="wp-json/index.json" />
+	<link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/9601.json" />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php%EF%B9%96rsd.xml" />
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+	<meta name="generator" content="WordPress 5.8.6" />
+	<meta name="generator" content="WooCommerce 6.4.1" />
+	<link rel="canonical" href="index.html" />
+	<link rel='shortlink' href='index.html' />
+	<link rel="alternate" type="application/json+oembed"
+		href="wp-json/oembed/1.0/embed%EF%B9%96url=https%EF%B9%95%EA%A4%B7%EA%A4%B7wpbingosite.com%EA%A4%B7wordpress%EA%A4%B7wrish%EA%A4%B7.json" />
+	<link rel="alternate" type="text/xml+oembed"
+		href="wp-json/oembed/1.0/embed%EF%B9%96url=https%EF%B9%95%EA%A4%B7%EA%A4%B7wpbingosite.com%EA%A4%B7wordpress%EA%A4%B7wrish%EA%A4%B7&amp;format=xml.xml" />
+	<meta name="generator" content="Redux 4.3.13" /> <noscript>
+		<style>
+			.woocommerce-product-gallery {
+				opacity: 1 !important;
+			}
+		</style>
+	</noscript>
+	<link rel="icon" href="wp-content/uploads/2021/08/cropped-80x80-1-32x32.jpg" sizes="32x32" />
+	<link rel="icon" href="wp-content/uploads/2021/08/cropped-80x80-1-192x192.jpg" sizes="192x192" />
+	<link rel="apple-touch-icon" href="wp-content/uploads/2021/08/cropped-80x80-1-180x180.jpg" />
+	<meta name="msapplication-TileImage"
+		content="https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/08/cropped-80x80-1-270x270.jpg" />
+	<noscript>
+		<style id="rocket-lazyload-nojs-css">
+			.rll-youtube-player,
+			[data-lazy-src] {
+				display: none !important;
+			}
+		</style>
+	</noscript>
+</head>
+
+<body
+	class="home page-template page-template-page-templates page-template-homepage page-template-page-templateshomepage-php page page-id-9601 theme-wrish woocommerce-no-js banners-effect-6 elementor-default elementor-kit-9482 elementor-page elementor-page-9601">
+	<div id="page" class="hfeed page-wrapper  ">
+		<h1 class="bwp-title hide"><a href="index.html" rel="home">Wrish – Watch Store WooCommerce WordPress Theme</a>
+		</h1>
+		<header id='bwp-header' class="bwp-header header-v1">
+
+			<div class="header-mobile">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3 header-left">
+							<div class="navbar-header">
+								<button type="button" id="show-megamenu" class="navbar-toggle">
+									<span>Menu</span>
+								</button>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 header-center ">
+							<div class="wpbingoLogo">
+								<a href="index.html">
+									<img width="400" height="81"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%2081'%3E%3C/svg%3E"
+										alt="Wrish – Watch Store WooCommerce WordPress Theme"
+										data-lazy-src="wp-content/uploads/2021/09/logo.png" /><noscript><img width="400"
+											height="81" src="wp-content/uploads/2021/09/logo.png"
+											alt="Wrish – Watch Store WooCommerce WordPress Theme" /></noscript>
+								</a>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3 header-right">
+							<div class="wrish-topcart popup">
+								<div class="dropdown mini-cart top-cart"
+									data-text_added="Product was added to cart successfully!">
+									<div class="remove-cart-shadow"></div>
+									<a class="dropdown-toggle cart-icon" href="#" role="button" data-toggle="dropdown"
+										aria-haspopup="true" aria-expanded="false">
+										<div class="icons-cart"><i class="icon2-shopping-bag"></i><span
+												class="cart-count">0</span></div>
+									</a>
+									<div class="dropdown-menu cart-popup">
+										<div class="remove-cart">
+											<a class="dropdown-toggle cart-remove" data-toggle="dropdown"
+												data-hover="dropdown" data-delay="0" href="#"
+												title="View your shopping cart">
+												Close<i class="icon_close"></i>
+											</a>
+										</div>
+										<div class="top-total-cart">Cart (0)</div>
+										<div class="cart-icon-big"></div>
+										<ul class="cart_list product_list_widget ">
+											<li class="empty">
+												<span>No products in the cart.</span>
+												<a class="go-shop" href="#">GO TO SHOP <i aria-hidden="true"
+														class="arrow_right"></i></a>
+											</li>
+										</ul><!-- end product list -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="header-desktop">
+				<div class='header-wrapper' data-sticky_header="0" style="background-color: #ffddcd;">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 header-left" style="
+							height
+							:50px;
+							display: grid;
+							grid-template-columns: 1fr 1fr;
+							">
+								<div class="wpbingoLogo">
+									<a href="index.html">
+										<img width="400" height="81"
+											src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%2081'%3E%3C/svg%3E"
+											alt="Wrish – Watch Store WooCommerce WordPress Theme"
+											data-lazy-src="wp-content/uploads/2021/09/logo.png" /><noscript><img
+												width="400" height="81" src="wp-content/uploads/2021/09/logo.png"
+												alt="Wrish – Watch Store WooCommerce WordPress Theme" /></noscript>
+									</a>
+								</div>
+								<div class="content-header-main" style="padding-top: 15px;">
+									<div class="wpbingo-menu-mobile header-menu">
+										<div class="header-menu-bg">
+											<div class="wpbingo-menu-wrapper">
+												<div class="megamenu" style="
+    width: 40vw!important;
+	
+    margin: 0!important;
+    padding: 0!important;
+    float: right;
+">
+													<nav class="navbar-default">
+														<div class="bwp-navigation primary-navigation navbar-mega"
+															data-text_close="Close">
+															<div class="float-menu" style="width:35vw!important">
+																<nav id="main-navigation" class="std-menu clearfix">
+																	<div class="menu-main-menu-container">
+																		<ul id="menu-main-menu" class="menu" style="
+	display: flex!important;">
+																			<li
+																				class="level-0 menu-item-2985  menu-item-has-children    menu-item menu-item-type-post_type menu-item-object-page  mega-menu mega-menu-fullwidth-width     ">
+																				<a href="#"><span
+																						class="menu-item-text">Home</span></a>
+
+																			</li>
+																			<li
+																				class="level-0 menu-item-2985  menu-item-has-children    menu-item menu-item-type-post_type menu-item-object-page  mega-menu mega-menu-fullwidth-width     ">
+																				<a href="#"><span
+																						class="menu-item-text">About
+																						us</span></a>
+
+																			</li>
+																			<li
+																				class="level-0 menu-item-17678  menu-item-has-children    menu-item menu-item-type-post_type menu-item-object-product  mega-menu mega-menu-fullwidth-width     ">
+																				<a href="#"><span
+																						class="menu-item-text">Product</span></a>
+
+																			</li>
+																			<li
+																				class="level-0 menu-item-27137  menu-item-has-children    menu-item menu-item-type-post_type menu-item-object-page  mega-menu mega-menu-fullwidth-width     ">
+																				<a href="#"><span
+																						class="menu-item-text">Contact
+																						us</span></a>
+
+																			</li>
+
+																		</ul>
+																	</div>
+																</nav>
+
+															</div>
+
+														</div>
+													</nav>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div><!-- End header-wrapper -->
+			</div>
+		</header><!-- End #bwp-header -->
+		<div id="bwp-main" class="bwp-main">
+			<div data-bg="https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/09/bg-breadcrumb.jpg"
+				data-bg_default="https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/09/bg-breadcrumb.jpg"
+				class="page-title bwp-title rocket-lazyload" style="">
+				<div class="container">
+					<div class="content-title-heading">
+						<span class="back-to-shop">Shop</span>
+						<h1 class="text-title-heading">
+							Home Clean </h1>
+					</div><!-- Page Title -->
+					<div id="breadcrumb" class="breadcrumb">
+						<div class="bwp-breadcrumb"><a href="index.html">Home</a> <span class="delimiter"></span> <span
+								class="current">Home Clean</span> </div>
+					</div>
+				</div>
+			</div><!-- .container -->
+			<div id="main-content" class="main-content">
+				<div id="primary" class="content-area container">
+					<div id="content" class="site-content" role="main">
+						<article id="post-9601" class="post-9601 page type-page status-publish hentry">
+							<div class="entry-content clearfix">
+								<div data-elementor-type="wp-page" data-elementor-id="9601"
+									class="elementor elementor-9601">
+									<div class="elementor-inner">
+										<div class="elementor-section-wrap"">
+											<section
+												class=" elementor-section elementor-top-section elementor-element elementor-element-a1bc94b
+											elementor-section-full_width elementor-section-height-default
+											elementor-section-height-default" data-id="a1bc94b"
+											data-element_type="section">
+											<div class="elementor-container elementor-column-gap-no">
+												<div class="elementor-row">
+													<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cfc0b9d"
+														data-id="cfc0b9d" data-element_type="column">
+														<div class="elementor-column-wrap elementor-element-populated">
+															<div class="elementor-widget-wrap">
+																<div class="elementor-element elementor-element-b013281 text-center elementor-widget elementor-widget-bwp_slider"
+																	data-id="b013281" data-element_type="widget"
+																	data-widget_type="bwp_slider.default">
+																	<div class="elementor-widget-container">
+																		<div class="bwp-slider slider-homepage2">
+																			<div class="slick-carousel slick-carousel-center"
+																				data-autoplay="true" data-dots="true"
+																				data-nav="true" data-columns4="1"
+																				data-columns3="1" data-columns2="1"
+																				data-columns1="1" data-columns1440="1"
+																				data-columns="1">
+																				<div class="item">
+																					<div class="item-content">
+																						<div class="content-image">
+																							<img width="1920"
+																								height="100"
+																								src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%20840'%3E%3C/svg%3E"
+																								alt="Image Slider"
+																								data-lazy-src="wp-content/uploads/2021/new/hero_backpack.jpg"
+																								style="max-height: 92vh!important;height:92vh!important"><noscript><img
+																									width="1920"
+																									height="100"
+																									src="wp-content/uploads/2021/new/hero_backpack.jpg"
+																									alt="Image Slider"></noscript>
+																						</div>
+																						<div
+																							class="item-info horizontal_start vertical_middle align_left">
+																							<div class="content">
+																								<div
+																									class="subtitle-slider">
+																									<span>TIMELESS
+																										&amp;
+																										ELEGANT</span>
+																								</div>
+																								<h2
+																									class="title-slider">
+																									<span>World
+																										Class
+																									</span>
+																								</h2>
+																								<div
+																									class="description-slider">
+																									<span>Complete
+																										your
+																										everyday
+																										look with a
+																										classic
+																										leather
+																										backpack.
+																									</span>
+																								</div>
+
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="item">
+																					<div class="item-content">
+																						<div class="content-image">
+																							<img width="1920"
+																								height="100"
+																								src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%20840'%3E%3C/svg%3E"
+																								alt="Image Slider"
+																								data-lazy-src="wp-content/uploads/2021/new/hero_briefcase.jpg"
+																								style="max-height: 92vh!important;height:92vh!important"><noscript><img
+																									width="1920"
+																									height="100"
+																									src="wp-content/uploads/2021/new/hero_briefcase.jpg"
+																									alt="Image Slider"></noscript>
+																						</div>
+																						<div
+																							class="item-info horizontal_start vertical_middle align_left">
+																							<div class="content">
+																								<div
+																									class="subtitle-slider">
+																									<span>TIMELESS
+																										&amp;
+																										ELEGANT</span>
+																								</div>
+																								<h2
+																									class="title-slider">
+																									<span>Luxury
+																										Leather
+																									</span>
+																								</h2>
+																								<div
+																									class="description-slider">
+																									<span>Complete
+																										your
+																										everyday
+																										look with a
+																										classic
+																										leather
+																										strap
+																										watch.</span>
+																								</div>
+
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="item">
+																					<div class="item-content">
+																						<div class="content-image">
+																							<img width="1920"
+																								height="100"
+																								src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%20840'%3E%3C/svg%3E"
+																								alt="Image Slider"
+																								data-lazy-src="wp-content/uploads/2021/new/hero_classy_handbag.jpg"
+																								style="max-height: 92vh!important;height:92vh!important"><noscript><img
+																									width="1920"
+																									height="100"
+																									src="wp-content/uploads/2021/new/hero_classy_handbag.jpg"
+																									alt="Image Slider"></noscript>
+																						</div>
+																						<div
+																							class="item-info horizontal_start vertical_middle align_left">
+																							<div class="content">
+																								<div
+																									class="subtitle-slider">
+																									<span>TIMELESS
+																										&amp;
+																										ELEGANT</span>
+																								</div>
+																								<h2
+																									class="title-slider">
+																									<span>BEST
+																										SELLER</span>
+																								</h2>
+																								<div
+																									class="description-slider">
+																									<span>Complete
+																										your
+																										everyday
+																										look with a
+																										classic
+																										leather
+																										strap
+																										watch.</span>
+																								</div>
+
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											</section>
+											<section
+												class="elementor-section elementor-top-section elementor-element elementor-element-f8629a0 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+												data-id="f8629a0" data-element_type="section">
+												<div class="elementor-container elementor-column-gap-default">
+													<div class="elementor-row">
+														<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-16fadb1 wpb-col-sm-50 "
+															data-id="16fadb1" data-element_type="column">
+															<div
+																class="elementor-column-wrap elementor-element-populated">
+																<div class="elementor-widget-wrap">
+																	<div class="elementor-element elementor-element-158bd06 elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
+																		data-id="158bd06" data-element_type="widget"
+																		data-widget_type="icon-box.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-icon-box-wrapper">
+																				<div class="elementor-icon-box-icon">
+																					<span
+																						class="elementor-icon elementor-animation-">
+
+																					</span>
+																				</div>
+																				<div class="elementor-icon-box-content">
+																					<h3
+																						class="elementor-icon-box-title">
+																						<span>
+																							Long Term Relatinships
+																						</span>
+																					</h3>
+																					<p
+																						class="elementor-icon-box-description">
+																						SAMRA is striving to establish
+																						long term relationship with our
+																						International Partners. </p>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-f23d139 wpb-col-sm-50"
+															data-id="f23d139" data-element_type="column">
+															<div
+																class="elementor-column-wrap elementor-element-populated">
+																<div class="elementor-widget-wrap">
+																	<div class="elementor-element elementor-element-b65d429 elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
+																		data-id="b65d429" data-element_type="widget"
+																		data-widget_type="icon-box.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-icon-box-wrapper">
+																				<div class="elementor-icon-box-icon">
+																					<span
+																						class="elementor-icon elementor-animation-">
+																					</span>
+																				</div>
+																				<div class="elementor-icon-box-content">
+																					<h3
+																						class="elementor-icon-box-title">
+																						<span>
+																							Eco Friendly </span>
+																					</h3>
+																					<p
+																						class="elementor-icon-box-description">
+																						SAMRA leaves no waste behind.
+																					</p>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-35f7209 wpb-col-sm-50"
+															data-id="35f7209" data-element_type="column">
+															<div
+																class="elementor-column-wrap elementor-element-populated">
+																<div class="elementor-widget-wrap">
+																	<div class="elementor-element elementor-element-368d592 elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
+																		data-id="368d592" data-element_type="widget"
+																		data-widget_type="icon-box.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-icon-box-wrapper">
+																				<div class="elementor-icon-box-icon">
+																					<span
+																						class="elementor-icon elementor-animation-">
+																					</span>
+																				</div>
+																				<div class="elementor-icon-box-content">
+																					<h3
+																						class="elementor-icon-box-title">
+																						<span>
+																							Quality and On-Time </span>
+																					</h3>
+																					<p
+																						class="elementor-icon-box-description">
+																						Each of our Handmade leather
+																						products will be delivered
+																						without compromising quality and
+																						always on-time.
+																					</p>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+
+													</div>
+												</div>
+											</section>
+											<section
+												class="elementor-section elementor-top-section elementor-element elementor-element-908a6d1 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+												data-id="908a6d1" data-element_type="section">
+												<div class="elementor-container elementor-column-gap-default">
+													<div class="elementor-row">
+														<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d9392b7"
+															data-id="d9392b7" data-element_type="column">
+															<div
+																class="elementor-column-wrap elementor-element-populated">
+																<div class="elementor-widget-wrap">
+																	<div class="elementor-element elementor-element-0003a89 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+																		data-id="0003a89" data-element_type="widget"
+																		data-widget_type="divider.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-divider">
+																				<span
+																					class="elementor-divider-separator">
+																				</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+											<section
+												class="elementor-section elementor-top-section elementor-element elementor-element-43f76cf elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+												data-id="43f76cf" data-element_type="section"
+												data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+												<div class="elementor-container elementor-column-gap-default">
+													<div class="elementor-row">
+														<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f336524"
+															data-id="f336524" data-element_type="column">
+															<div
+																class="elementor-column-wrap elementor-element-populated">
+																<div class="elementor-widget-wrap">
+																	<div class="elementor-element elementor-element-a534a42 elementor-widget elementor-widget-heading"
+																		data-id="a534a42" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h2
+																				class="elementor-heading-title elementor-size-default">
+																				SAMRA Leathers' Products</h2>
+																		</div>
+																	</div>
+																	<div class="elementor-element elementor-element-6c5eda7 elementor-widget elementor-widget-bwp_product_categories"
+																		style="margin-top:50px" data-id="6c5eda7"
+																		data-element_type="widget"
+																		data-widget_type="bwp_product_categories.default">
+																		<div class="elementor-widget-container">
+																			<div id="category_slide_9811613011676553157"
+																				class="bwp-woo-categories slider2">
+																				<div class="content-category slick-carousel"
+																					data-dots="0"
+																					data-slidesToScroll="true"
+																					data-nav="1" data-columns4="1"
+																					data-columns3="2" data-columns2="3"
+																					data-columns1="3"
+																					data-columns1440="4"
+																					data-columns="4">
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="#">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery01_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery01_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="#">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery02_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery02_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="#">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery03_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery03_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="#">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery04_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery04_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="#">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery05_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery05_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery07_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery07_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery08_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery08_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery09_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery09_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery10_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery10_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery11_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery11_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery12_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery12_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery13_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery13_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery14_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery14_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery15_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery15_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery16_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery16_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery17_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery17_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																					<div class="item item-product-cat">
+																						<div
+																							class="item-product-cat-content">
+																							<a href="">
+																								<div
+																									class="item-thumbnail elementor-animation-wobble-to-bottom-right">
+																									<img width="330"
+																										height="330"
+																										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20330'%3E%3C/svg%3E"
+																										alt="castus-fiesta"
+																										data-lazy-src="wp-content/uploads/2021/new/sl_gallery06_.png" /><noscript><img
+																											width="330"
+																											height="330"
+																											src="wp-content/uploads/2021/new/sl_gallery06_.png"
+																											alt="castus-fiesta" /></noscript>
+																								</div>
+																							</a>
+
+																						</div>
+
+																					</div>
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+
+
+											<section
+												class="elementor-section elementor-top-section elementor-element elementor-element-1117e46 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+												data-id="1117e46" data-element_type="section"
+												data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+												<div class="elementor-background-overlay"></div>
+												<div class="elementor-container elementor-column-gap-default">
+													<div class="elementor-row">
+														<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c97dfc1"
+															data-id="c97dfc1" data-element_type="column">
+															<div
+																class="elementor-column-wrap elementor-element-populated">
+																<div class="elementor-widget-wrap">
+																	<div class="elementor-element elementor-element-2ada197 elementor-widget elementor-widget-heading"
+																		data-id="2ada197" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h2
+																				class="elementor-heading-title elementor-size-default">
+																				About SAMRA Leathers</h2>
+																		</div>
+																	</div>
+
+																	<div class="elementor-element elementor-element-3d7d7db elementor-widget elementor-widget-text-editor"
+																		data-id="3d7d7db" data-element_type="widget"
+																		data-widget_type="text-editor.default">
+																		<div class="elementor-widget-container">
+																			<div
+																				class="elementor-text-editor elementor-clearfix">
+																				<p>SAMRA as a company was founded in
+																					2012. The company stands for
+																					originality and uncompromising
+																					designs. SAMRA uses international
+																					standard premium quality leather.
+																					Most of the leather is made as per
+																					the specifications and requirements
+																					of SAMRA and only for SAMRA. SAMRA
+																					is an eco-friendly company, leaving
+																					no waste products to be dumped, as
+																					scraps will be used as an input for
+																					small accessories and floor mats.
+																					SAMRA is established in a belief of
+																					producing high qualities of clarity,
+																					flexibility, strength, thickness and
+																					compact texture. As 80 percent of
+																					the employees are women, SAMRA aims
+																					to contribute for the growth of the
+																					economy through women’s empowerment.
+																					High-End Luxury and Sophisticated
+																					design is what sets apart SAMRA.</p>
+																			</div>
+																		</div>
+																	</div>
+
+																</div>
+															</div>
+														</div>
+														<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-18a1898"
+															data-id="18a1898" data-element_type="column">
+															<div
+																class="elementor-column-wrap elementor-element-populated">
+																<div class="elementor-widget-wrap">
+																	<div class="elementor-element elementor-element-2b83012 elementor-widget elementor-widget-image"
+																		data-id="2b83012" data-element_type="widget"
+																		data-widget_type="image.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-image">
+																				<img width="319" height="521"
+																					src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20319%20521'%3E%3C/svg%3E"
+																					class="attachment-large size-large"
+																					alt=""
+																					data-lazy-src="wp-content/uploads/2021/new/3.jpeg" /><noscript><img
+																						width="319" height="521"
+																						src="wp-content/uploads/2021/new/3.jpeg"
+																						class="attachment-large size-large"
+																						alt=""
+																						style="width:100%" /></noscript>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+
+											<section
+												class="elementor-section elementor-top-section elementor-element elementor-element-6adca56 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+												data-id="6adca56" data-element_type="section">
+												<div class="elementor-container elementor-column-gap-default">
+													<div class="elementor-row">
+														<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f51a52a"
+															data-id="f51a52a" data-element_type="column">
+															<div
+																class="elementor-column-wrap elementor-element-populated">
+																<div class="elementor-widget-wrap">
+																	<div class="elementor-element elementor-element-7046b7d elementor-widget elementor-widget-heading"
+																		data-id="7046b7d" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h2 class="elementor-heading-title elementor-size-default"
+																				style="padding-top:50px;padding-bottom:50px">
+																				Products</h2>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+											<section
+												class="elementor-section elementor-top-section elementor-element elementor-element-fb3991a elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+												data-id="fb3991a" data-element_type="section">
+												<div class="elementor-container elementor-column-gap-default">
+													<div class="elementor-row">
+														<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2f91809"
+															data-id="2f91809" data-element_type="column">
+															<div
+																class="elementor-column-wrap elementor-element-populated">
+																<div class="elementor-widget-wrap">
+																	<div class="elementor-element elementor-element-80184aa elementor-widget elementor-widget-bwp_product_list"
+																		data-id="80184aa" data-element_type="widget"
+																		data-widget_type="bwp_product_list.default">
+																		<div class="elementor-widget-container">
+																			<div id="bwp_default_10346055821676553157"
+																				class="bwp_product_list slider no-title">
+																				<div class="list-product">
+																					<div class="product-content">
+																						<div
+																							class="content-product-list">
+																							<div class="slider products-list grid slick-carousel"
+																								data-slidesToScroll="true"
+																								data-dots="false"
+																								data-nav="1"
+																								data-columns4="1"
+																								data-columns3="2"
+																								data-columns2="3"
+																								data-columns1="3"
+																								data-columns1440="4"
+																								data-columns="4">
+																								<div
+																									class="item-product">
+																									<div class="items">
+																										<div
+																											class="products-entry content-product1 clearfix product-wapper">
+																											<div
+																												class="products-thumb">
+																												<div
+																													class='product-lable'>
+
+																													<div
+																														class="">
+																													</div>
+																												</div>
+																												<div
+																													class="product-thumb-hover">
+																													<a href="#"
+																														class="woocommerce-LoopProduct-link"><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/09/p4-450x450.jpg" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/09/p4-450x450.jpg"
+																																class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																																alt="" /></noscript><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/new/product6.png" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/new/product6.png"
+																																class=" "
+																																style="height:400px!important"
+																																alt="" /></noscript></a>
+																												</div>
+																											</div>
+																											<div
+																												class="products-content">
+																												<div
+																													class="contents">
+																													<div
+																														class="cat-products">
+																														<a
+																															href="#">Color
+																															:
+																															Black</a>
+																													</div>
+																													<h3
+																														class="product-title">
+																														<a
+																															href=#">Suede
+																															Clutch</a>
+																													</h3>
+
+																													<span
+																														class="price"><span
+																															class="woocommerce-Price-amount amount"><bdi><span
+																																	class="woocommerce-Price-currencySymbol">&#36;</span>
+																																450</bdi></span>
+																														<div
+																															class="btn-atc">
+																															<a rel="nofollow"
+																																href="#"
+																																data-quantity="1"
+																																data-product_id="3989"
+																																data-product_sku="VN00189"
+																																class="button product_type_grouped read_more">View
+																																products</a>
+																														</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+
+																								</div>
+																								<div
+																									class="item-product">
+																									<div class="items">
+																										<div
+																											class="products-entry content-product1 clearfix product-wapper">
+																											<div
+																												class="products-thumb">
+																												<div
+																													class='product-lable'>
+
+																													<div
+																														class="">
+																													</div>
+																												</div>
+																												<div
+																													class="product-thumb-hover">
+																													<a href="#"
+																														class="woocommerce-LoopProduct-link"><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/09/p4-450x450.jpg" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/09/p4-450x450.jpg"
+																																class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																																alt="" /></noscript><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/new/product8.png" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/new/product8.png"
+																																class=" "
+																																style="height:400px!important"
+																																alt="" /></noscript></a>
+																												</div>
+																											</div>
+																											<div
+																												class="products-content">
+																												<div
+																													class="contents">
+																													<div
+																														class="cat-products">
+																														<a
+																															href="#">Brown
+																															/
+																															Blue</a>
+																													</div>
+																													<h3
+																														class="product-title">
+																														<a
+																															href=#">Suede
+																															Clutch</a>
+																													</h3>
+
+																													<span
+																														class="price"><span
+																															class="woocommerce-Price-amount amount"><bdi><span
+																																	class="woocommerce-Price-currencySymbol">&#36;</span>
+																																380</bdi></span>
+																														<div
+																															class="btn-atc">
+																															<a rel="nofollow"
+																																href="#"
+																																data-quantity="1"
+																																data-product_id="3989"
+																																data-product_sku="VN00189"
+																																class="button product_type_grouped read_more">View
+																																products</a>
+																														</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+
+																								</div>
+																								<div
+																									class="item-product">
+																									<div class="items">
+																										<div
+																											class="products-entry content-product1 clearfix product-wapper">
+																											<div
+																												class="products-thumb">
+																												<div
+																													class='product-lable'>
+
+																													<div
+																														class="">
+																													</div>
+																												</div>
+																												<div
+																													class="product-thumb-hover">
+																													<a href="#"
+																														class="woocommerce-LoopProduct-link"><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/09/p4-450x450.jpg" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/09/p4-450x450.jpg"
+																																class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																																alt="" /></noscript><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/new/product9.png" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/new/product9.png"
+																																class=" "
+																																style="height:400px!important"
+																																alt="" /></noscript></a>
+																												</div>
+																											</div>
+																											<div
+																												class="products-content">
+																												<div
+																													class="contents">
+																													<div
+																														class="cat-products">
+																														<a
+																															href="#">Brown
+																															/
+																															Blue</a>
+																													</div>
+																													<h3
+																														class="product-title">
+																														<a
+																															href=#">Jacket</a>
+																													</h3>
+
+																													<span
+																														class="price"><span
+																															class="woocommerce-Price-amount amount"><bdi><span
+																																	class="woocommerce-Price-currencySymbol">&#36;</span>
+																																1,500</bdi></span>
+																														<div
+																															class="btn-atc">
+																															<a rel="nofollow"
+																																href="#"
+																																data-quantity="1"
+																																data-product_id="3989"
+																																data-product_sku="VN00189"
+																																class="button product_type_grouped read_more">View
+																																products</a>
+																														</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+
+																								</div>
+																								<div
+																									class="item-product">
+																									<div class="items">
+																										<div
+																											class="products-entry content-product1 clearfix product-wapper">
+																											<div
+																												class="products-thumb">
+																												<div
+																													class='product-lable'>
+
+																													<div
+																														class="">
+																													</div>
+																												</div>
+																												<div
+																													class="product-thumb-hover">
+																													<a href="#"
+																														class="woocommerce-LoopProduct-link"><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/09/p4-450x450.jpg" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/09/p4-450x450.jpg"
+																																class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																																alt="" /></noscript><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/new/product10.png" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/new/product10.png"
+																																class=" "
+																																style="height:400px!important"
+																																alt="" /></noscript></a>
+																												</div>
+																											</div>
+																											<div
+																												class="products-content">
+																												<div
+																													class="contents">
+																													<div
+																														class="cat-products">
+																														<a
+																															href="#">Blue</a>
+																													</div>
+																													<h3
+																														class="product-title">
+																														<a
+																															href=#">Gym
+																															Bag</a>
+																													</h3>
+
+																													<span
+																														class="price"><span
+																															class="woocommerce-Price-amount amount"><bdi><span
+																																	class="woocommerce-Price-currencySymbol">&#36;</span>
+																																550</bdi></span>
+																														<div
+																															class="btn-atc">
+																															<a rel="nofollow"
+																																href="#"
+																																data-quantity="1"
+																																data-product_id="3989"
+																																data-product_sku="VN00189"
+																																class="button product_type_grouped read_more">View
+																																products</a>
+																														</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+
+																								</div>
+																								<div
+																									class="item-product">
+																									<div class="items">
+																										<div
+																											class="products-entry content-product1 clearfix product-wapper">
+																											<div
+																												class="products-thumb">
+																												<div
+																													class='product-lable'>
+
+																													<div
+																														class="">
+																													</div>
+																												</div>
+																												<div
+																													class="product-thumb-hover">
+																													<a href="#"
+																														class="woocommerce-LoopProduct-link"><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/09/p4-450x450.jpg" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/09/p4-450x450.jpg"
+																																class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																																alt="" /></noscript><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/new/product11.png" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/new/product11.png"
+																																class=" "
+																																style="height:400px!important"
+																																alt="" /></noscript></a>
+																												</div>
+																											</div>
+																											<div
+																												class="products-content">
+																												<div
+																													class="contents">
+																													<div
+																														class="cat-products">
+																														<a
+																															href="#">Grey</a>
+																													</div>
+																													<h3
+																														class="product-title">
+																														<a
+																															href=#">Laptop
+																															Bag</a>
+																													</h3>
+
+																													<span
+																														class="price"><span
+																															class="woocommerce-Price-amount amount"><bdi><span
+																																	class="woocommerce-Price-currencySymbol">&#36;</span>
+																																450</bdi></span>
+																														<div
+																															class="btn-atc">
+																															<a rel="nofollow"
+																																href="#"
+																																data-quantity="1"
+																																data-product_id="3989"
+																																data-product_sku="VN00189"
+																																class="button product_type_grouped read_more">View
+																																products</a>
+																														</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+
+																								</div>
+																								<div
+																									class="item-product">
+																									<div class="items">
+																										<div
+																											class="products-entry content-product1 clearfix product-wapper">
+																											<div
+																												class="products-thumb">
+																												<div
+																													class='product-lable'>
+
+																													<div
+																														class="">
+																													</div>
+																												</div>
+																												<div
+																													class="product-thumb-hover">
+																													<a href="#"
+																														class="woocommerce-LoopProduct-link"><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/09/p4-450x450.jpg" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/09/p4-450x450.jpg"
+																																class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																																alt="" /></noscript><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/new/product12.png" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/new/product12.png"
+																																class=" "
+																																style="height:400px!important"
+																																alt="" /></noscript></a>
+																												</div>
+																											</div>
+																											<div
+																												class="products-content">
+																												<div
+																													class="contents">
+																													<div
+																														class="cat-products">
+																														<a
+																															href="#">Brown</a>
+																													</div>
+																													<h3
+																														class="product-title">
+																														<a
+																															href=#">Backpack</a>
+																													</h3>
+
+																													<span
+																														class="price"><span
+																															class="woocommerce-Price-amount amount"><bdi><span
+																																	class="woocommerce-Price-currencySymbol">&#36;</span>
+																																520</bdi></span>
+																														<div
+																															class="btn-atc">
+																															<a rel="nofollow"
+																																href="#"
+																																data-quantity="1"
+																																data-product_id="3989"
+																																data-product_sku="VN00189"
+																																class="button product_type_grouped read_more">View
+																																products</a>
+																														</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+
+																								</div>
+																								<div
+																									class="item-product">
+																									<div class="items">
+																										<div
+																											class="products-entry content-product1 clearfix product-wapper">
+																											<div
+																												class="products-thumb">
+																												<div
+																													class='product-lable'>
+
+																													<div
+																														class="">
+																													</div>
+																												</div>
+																												<div
+																													class="product-thumb-hover">
+																													<a href="#"
+																														class="woocommerce-LoopProduct-link"><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/09/p4-450x450.jpg" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/09/p4-450x450.jpg"
+																																class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+																																alt="" /></noscript><img
+																															width="450"
+																															height="450"
+																															src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20450'%3E%3C/svg%3E"
+																															alt=""
+																															data-lazy-src="wp-content/uploads/2021/new/product13.png" /><noscript><img
+																																width="450"
+																																height="450"
+																																src="wp-content/uploads/2021/new/product13.png"
+																																class=" "
+																																style="height:400px!important"
+																																alt="" /></noscript></a>
+																												</div>
+																											</div>
+																											<div
+																												class="products-content">
+																												<div
+																													class="contents">
+																													<div
+																														class="cat-products">
+																														<a
+																															href="#">Black</a>
+																													</div>
+																													<h3
+																														class="product-title">
+																														<a
+																															href=#">Wrap
+																															Clutch</a>
+																													</h3>
+
+																													<span
+																														class="price"><span
+																															class="woocommerce-Price-amount amount"><bdi><span
+																																	class="woocommerce-Price-currencySymbol">&#36;</span>
+																																220</bdi></span>
+																														<div
+																															class="btn-atc">
+																															<a rel="nofollow"
+																																href="#"
+																																data-quantity="1"
+																																data-product_id="3989"
+																																data-product_sku="VN00189"
+																																class="button product_type_grouped read_more">View
+																																products</a>
+																														</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+
+																								</div>
+
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+
+										</div>
+									</div>
+								</div>
+							</div><!-- .entry-content -->
+						</article><!-- #post-## -->
+					</div><!-- #content -->
+				</div><!-- #primary -->
+			</div><!-- #main-content -->
+		</div><!-- #main -->
+		<footer id="bwp-footer" class="bwp-footer footer-1">
+			<div data-elementor-type="wp-post" data-elementor-id="11196" class="elementor elementor-11196">
+				<div class="elementor-inner">
+					<div class="elementor-section-wrap">
+
+						<section
+							class="elementor-section elementor-top-section elementor-element elementor-element-5fc90d6 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+							data-id="5fc90d6" data-element_type="section"
+							data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-container elementor-column-gap-default">
+								<div class="elementor-row">
+									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5e31be6"
+										data-id="5e31be6" data-element_type="column">
+										<div class="elementor-column-wrap elementor-element-populated">
+											<div class="elementor-widget-wrap">
+
+												<section
+													class="elementor-section elementor-inner-section elementor-element elementor-element-ecf8408 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+													data-id="ecf8408" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-extended">
+														<div class="elementor-row">
+															<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5b092a2 wpb-col-sm-40"
+																data-id="5b092a2" data-element_type="column">
+																<div
+																	class="elementor-column-wrap elementor-element-populated">
+																	<div class="elementor-widget-wrap">
+																		<div class="elementor-element elementor-element-ba0ca8b elementor-widget elementor-widget-text-editor"
+																			data-id="ba0ca8b" data-element_type="widget"
+																			data-widget_type="text-editor.default">
+																			<div class="elementor-widget-container">
+																				<div
+																					class="elementor-text-editor elementor-clearfix">
+																					Copyright © 2021. All Right Reserved
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+
+														</div>
+													</div>
+												</section>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div><!-- #page -->
+	<div class="search-overlay">
+		<div class="container wrapper-search">
+			<div class="search-top">
+				<h2>what are you looking for?</h2>
+				<div class="close-search">close<i class="icon_close"></i></div>
+			</div>
+			<form role="search" method="get" class="search-from ajax-search" action="index.html"
+				data-admin="https://wpbingosite.com/wordpress/wrish/wp-admin/admin-ajax.php" data-noresult="No Result"
+				data-limit="6">
+
+				<div class="search-box">
+					<button id="searchsubmit" class="btn" type="submit">
+						<i class="icon-search"></i>
+						<span>search</span>
+					</button>
+					<input type="text" value="" name="s" id="s" class="input-search s" placeholder="Search..." />
+					<div class="result-search-products-content">
+						<ul class="result-search-products">
+						</ul>
+					</div>
+				</div>
+				<input type="hidden" name="post_type" value="product" />
+			</form>
+
+		</div>
+	</div>
+	<div class="bwp-quick-view">
+	</div>
+	<div class="back-top">
+		<i class="arrow_carrot-up"></i>
+	</div>
+	<a rel="nofollow" style="display:none" href="https://wpbingosite.com/wordpress/wrish/?blackhole=5f7d0036d1"
+		title="Do NOT follow this link or you will be banned from the site!">Wrish – Watch Store WooCommerce WordPress
+		Theme</a>
+	<div id="woosw_wishlist" class="woosw-popup"></div>
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<link rel='stylesheet' id='elementor-post-9121-css'
+		href='wp-content/uploads/elementor/css/post-9121%EF%B9%96ver=1652345431.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='elementor-post-16554-css'
+		href='wp-content/uploads/elementor/css/post-16554%EF%B9%96ver=1652345431.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='elementor-post-12246-css'
+		href='wp-content/uploads/elementor/css/post-12246%EF%B9%96ver=1652345432.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='elementor-post-11196-css'
+		href='wp-content/uploads/elementor/css/post-11196%EF%B9%96ver=1652345473.css' type='text/css' media='all' />
+
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-includes/js/dist/vendor/regenerator-runtime.min%EF%B9%96ver=0.13.7.js' id='regenerator-runtime-js'
+		defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-includes/js/dist/vendor/wp-polyfill.min%EF%B9%96ver=3.15.0.js' id='wp-polyfill-js'></script>
+	<script type='text/javascript' id='contact-form-7-js-extra'>
+		/* <![CDATA[ */
+		var wpcf7 = { "api": { "root": "https:\/\/wpbingosite.com\/wordpress\/wrish\/wp-json\/", "namespace": "contact-form-7\/v1" }, "cached": "1" };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/plugins/contact-form-7/includes/js/index%EF%B9%96ver=1675850677.js'
+		id='contact-form-7-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min%EF%B9%96ver=2.7.0-wc.6.4.1.js'
+		id='jquery-blockui-js' defer></script>
+	<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+		/* <![CDATA[ */
+		var wc_add_to_cart_params = { "ajax_url": "\/wordpress\/wrish\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/wordpress\/wrish\/?wc-ajax=%%endpoint%%", "i18n_view_cart": "View cart", "cart_url": "https:\/\/wpbingosite.com\/wordpress\/wrish\/cart\/", "is_cart": "", "cart_redirect_after_add": "no" };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min%EF%B9%96ver=6.4.1.js'
+		id='wc-add-to-cart-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min%EF%B9%96ver=2.1.4-wc.6.4.1.js'
+		id='js-cookie-js' defer></script>
+	<script type='text/javascript' id='woocommerce-js-extra'>
+		/* <![CDATA[ */
+		var woocommerce_params = { "ajax_url": "\/wordpress\/wrish\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/wordpress\/wrish\/?wc-ajax=%%endpoint%%" };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min%EF%B9%96ver=6.4.1.js' id='woocommerce-js'
+		defer></script>
+	<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+		/* <![CDATA[ */
+		var wc_cart_fragments_params = { "ajax_url": "\/wordpress\/wrish\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/wordpress\/wrish\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_a6031b2d4731afc1d953a6a80fec7ddf", "fragment_name": "wc_fragments_a6031b2d4731afc1d953a6a80fec7ddf", "request_timeout": "5000" };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min%EF%B9%96ver=6.4.1.js'
+		id='wc-cart-fragments-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-includes/js/jquery/ui/core.min%EF%B9%96ver=1.12.1.js' id='jquery-ui-core-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-includes/js/jquery/ui/mouse.min%EF%B9%96ver=1.12.1.js' id='jquery-ui-mouse-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-includes/js/jquery/ui/slider.min%EF%B9%96ver=1.12.1.js' id='jquery-ui-slider-js' defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/plugins/wpbingo/assets/js/wpbingo%EF%B9%96ver=1675850677.js'
+		id='bwp_wpbingo_js-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min%EF%B9%96ver=1.4.1-wc.6.4.1.js'
+		id='jquery-cookie-js' defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/plugins/wpbingo/assets/js/newsletter%EF%B9%96ver=1675850677.js'
+		id='wpbingo-newsletter-js' defer></script>
+	<script type='text/javascript' id='bwp_woocommerce_filter-js-extra'>
+		/* <![CDATA[ */
+		var filter_ajax = { "ajaxurl": "https:\/\/wpbingosite.com\/wordpress\/wrish\/wp-admin\/admin-ajax.php" };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/plugins/wpbingo/assets/js/filter%EF%B9%96ver=1675850677.js'
+		id='bwp_woocommerce_filter-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+	<script type='text/javascript' id='rocket-preload-links-js-extra'>
+		/* <![CDATA[ */
+		var RocketPreloadLinksConfig = { "excludeUris": "\/wordpress\/wrish(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/checkout\/|\/cart\/|\/my-account\/|\/wc-api\/v(.*)|\/(index\\.php\/)?wp\\-json(\/.*|$))|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm", "siteUrl": "https:\/\/wpbingosite.com\/wordpress\/wrish", "onHoverDelay": "100", "rateThrottle": "3" };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/woo-smart-wishlist/assets/libs/perfect-scrollbar/js/perfect-scrollbar.jquery.min%EF%B9%96ver=3.0.0.js'
+		id='perfect-scrollbar-js' defer></script>
+	<script type='text/javascript' id='woosw-frontend-js-extra'>
+		/* <![CDATA[ */
+		var woosw_vars = { "ajax_url": "https:\/\/wpbingosite.com\/wordpress\/wrish\/wp-admin\/admin-ajax.php", "menu_action": "open_popup", "perfect_scrollbar": "yes", "wishlist_url": "https:\/\/wpbingosite.com\/wordpress\/wrish\/wishlist\/", "button_action": "list", "button_action_added": "popup", "empty_confirm": "This action cannot be undone. Are you sure?", "delete_confirm": "This action cannot be undone. Are you sure?", "copied_text": "Copied the wishlist link:", "menu_text": "Wishlist", "button_text": "Add to wishlist", "button_text_added": "Browse wishlist" };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/plugins/woo-smart-wishlist/assets/js/frontend%EF%B9%96ver=1675850677.js'
+		id='woosw-frontend-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/themes/wrish/js/popper.min.js' id='popper-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/themes/wrish/js/bootstrap.min.js' id='bootstrap-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/themes/wrish/js/jquery.mmenu.all.min.js' id='jquery-mmenu-all-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='wp-content/themes/wrish/js/slick.min.js'
+		id='slick-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/themes/wrish/js/instafeed.min.js' id='instafeed-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/themes/wrish/js/jquery.countdown.min.js' id='jquery-countdown-js' defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/themes/wrish/js/jquery.elevatezoom%EF%B9%96ver=1675850677.js'
+		id='jquery-elevatezoom-js' defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/themes/wrish/js/jquery.circlestime%EF%B9%96ver=1675850677.js'
+		id='jquery-circlestime-js' defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/themes/wrish/js/360imagerotate%EF%B9%96ver=1675850677.js'
+		id='360imagerotate-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min%EF%B9%96ver=4.1.1-wc.6.4.1.js'
+		id='photoswipe-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min%EF%B9%96ver=4.1.1-wc.6.4.1.js'
+		id='photoswipe-ui-default-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='wp-content/themes/wrish/js/sly.min.js'
+		id='sly-js' defer></script>
+	<script type='text/javascript' id='wrish-script-js-extra'>
+		/* <![CDATA[ */
+		var wrish_ajax = { "ajaxurl": "https:\/\/wpbingosite.com\/wordpress\/wrish\/wp-admin\/admin-ajax.php" };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/themes/wrish/js/functions%EF%B9%96ver=1675850677.js'
+		id='wrish-script-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='wrish-script-js-after'>window.addEventListener('DOMContentLoaded', function() {
+jQuery(function($){ "use strict"; $(document).on("click",".plus, .minus",function(){var t=$(this).closest(".quantity").find(".qty"),a=parseFloat(t.val()),n=parseFloat(t.attr("max")),s=parseFloat(t.attr("min")),e=t.attr("step");a&&""!==a&&"NaN"!==a||(a=0),(""===n||"NaN"===n)&&(n=""),(""===s||"NaN"===s)&&(s=0),("any"===e||""===e||void 0===e||"NaN"===parseFloat(e))&&(e=1),$(this).is(".plus")?t.val(n&&(n==a||a>n)?n:a+parseFloat(e)):s&&(s==a||s>a)?t.val(s):a>0&&t.val(a-parseFloat(e)),t.trigger("change")})});
+});</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-includes/js/underscore.min%EF%B9%96ver=1.13.1.js' id='underscore-js' defer></script>
+	<script type='text/javascript' id='wp-util-js-extra'>
+		/* <![CDATA[ */
+		var _wpUtilSettings = { "ajax": { "url": "\/wordpress\/wrish\/wp-admin\/admin-ajax.php" } };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-includes/js/wp-util.min%EF%B9%96ver=5.8.6.js' id='wp-util-js' defer></script>
+	<script type='text/javascript' id='wc-add-to-cart-variation-js-extra'>
+		/* <![CDATA[ */
+		var wc_add_to_cart_variation_params = { "wc_ajax_url": "\/wordpress\/wrish\/?wc-ajax=%%endpoint%%", "i18n_no_matching_variations_text": "Sorry, no products matched your selection. Please choose a different combination.", "i18n_make_a_selection_text": "Please select some product options before adding this product to your cart.", "i18n_unavailable_text": "Sorry, this product is unavailable. Please choose a different combination." };
+/* ]]> */
+	</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min%EF%B9%96ver=6.4.1.js'
+		id='wc-add-to-cart-variation-js' defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+		src='wp-content/cache/min/1/wordpress/wrish/wp-content/plugins/variation-swatches-for-woocommerce/assets/js/frontend%EF%B9%96ver=1675850677.js'
+		id='tawcvs-frontend-js' defer></script>
+	<script type='text/javascript' src='wp-includes/js/wp-embed.min%EF%B9%96ver=5.8.6.js' id='wp-embed-js'
+		defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/elementor/assets/js/webpack.runtime.min%EF%B9%96ver=3.6.5.js'
+		id='elementor-webpack-runtime-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/elementor/assets/js/frontend-modules.min%EF%B9%96ver=3.6.5.js'
+		id='elementor-frontend-modules-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min%EF%B9%96ver=4.0.2.js'
+		id='elementor-waypoints-js' defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/elementor/assets/lib/swiper/swiper.min%EF%B9%96ver=5.3.6.js' id='swiper-js'
+		defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/elementor/assets/lib/share-link/share-link.min%EF%B9%96ver=3.6.5.js' id='share-link-js'
+		defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/elementor/assets/lib/dialog/dialog.min%EF%B9%96ver=4.9.0.js' id='elementor-dialog-js'
+		defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1200,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1199,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},
+"version":"3.6.5","is_static":false,"experimentalFeatures":{"e_import_export":true,"e_hidden_wordpress_widgets":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true},"urls":{"assets":"http:\/\/wpbingosite.com\/wordpress\/wrish\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"viewport_tablet":1199,"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":9601,"title":"Wrish%20%E2%80%93%20Watch%20Store%20WooCommerce%20WordPress%20Theme%20%E2%80%93%20Just%20another%20WordPress%20site","excerpt":"","featuredImage":false}};
+</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/elementor/assets/js/frontend.min%EF%B9%96ver=3.6.5.js' id='elementor-frontend-js'
+		defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+		src='wp-content/plugins/elementor/assets/js/preloaded-modules.min%EF%B9%96ver=3.6.5.js'
+		id='preloaded-modules-js' defer></script>
+	<script>window.lazyLoadOptions = { elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, callback_loaded: function (element) { if (element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible") { if (element.classList.contains("lazyloaded")) { if (typeof window.jQuery != "undefined") { if (jQuery.fn.fitVids) { jQuery(element).parent().fitVids() } } } } } }; window.addEventListener('LazyLoad::Initialized', function (e) {
+			var lazyLoadInstance = e.detail.instance; if (window.MutationObserver) {
+				var observer = new MutationObserver(function (mutations) {
+					var image_count = 0; var iframe_count = 0; var rocketlazy_count = 0; mutations.forEach(function (mutation) {
+						for (var i = 0; i < mutation.addedNodes.length; i++) {
+							if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') { continue }
+							if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') { continue }
+							images = mutation.addedNodes[i].getElementsByTagName('img'); is_image = mutation.addedNodes[i].tagName == "IMG"; iframes = mutation.addedNodes[i].getElementsByTagName('iframe'); is_iframe = mutation.addedNodes[i].tagName == "IFRAME"; rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload'); image_count += images.length; iframe_count += iframes.length; rocketlazy_count += rocket_lazy.length; if (is_image) { image_count += 1 }
+							if (is_iframe) { iframe_count += 1 }
+						}
+					}); if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) { lazyLoadInstance.update() }
+				}); var b = document.getElementsByTagName("body")[0]; var config = { childList: !0, subtree: !0 }; observer.observe(b, config)
+			}
+		}, !1)</script>
+	<script data-no-minify="1" async
+		src="wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+	<script>class RocketElementorAnimation { constructor() { this.deviceMode = document.createElement("span"), this.deviceMode.id = "elementor-device-mode", this.deviceMode.setAttribute("class", "elementor-screen-only"), document.body.appendChild(this.deviceMode) } _detectAnimations() { let t = getComputedStyle(this.deviceMode, ":after").content.replace(/"/g, ""); this.animationSettingKeys = this._listAnimationSettingsKeys(t), document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t => { const e = t.getBoundingClientRect(); if (e.bottom >= 0 && e.top <= window.innerHeight) try { this._animateElement(t) } catch (t) { } }) } _animateElement(t) { const e = JSON.parse(t.dataset.settings), i = e._animation_delay || e.animation_delay || 0, n = e[this.animationSettingKeys.find(t => e[t])]; if ("none" === n) return void t.classList.remove("elementor-invisible"); t.classList.remove(n), this.currentAnimation && t.classList.remove(this.currentAnimation), this.currentAnimation = n; let s = setTimeout(() => { t.classList.remove("elementor-invisible"), t.classList.add("animated", n), this._removeAnimationSettings(t, e) }, i); window.addEventListener("rocket-startLoading", function () { clearTimeout(s) }) } _listAnimationSettingsKeys(t = "mobile") { const e = [""]; switch (t) { case "mobile": e.unshift("_mobile"); case "tablet": e.unshift("_tablet"); case "desktop": e.unshift("_desktop") }const i = []; return ["animation", "_animation"].forEach(t => { e.forEach(e => { i.push(t + e) }) }), i } _removeAnimationSettings(t, e) { this._listAnimationSettingsKeys().forEach(t => delete e[t]), t.dataset.settings = JSON.stringify(e) } static run() { const t = new RocketElementorAnimation; requestAnimationFrame(t._detectAnimations.bind(t)) } } document.addEventListener("DOMContentLoaded", RocketElementorAnimation.run);</script>
+	<script defer
+		src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+		integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
+		data-cf-beacon='{"rayId":"79a6892d5cef11b2","version":"2023.2.0","r":1,"token":"f0504b75471641599863d12d9668259a","si":100}'
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
