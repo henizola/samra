@@ -1671,64 +1671,7 @@
   </div>
 
 
-  <script>
-    $(document).ready(function () {
-      let cart_drawer = $('[data-section-id="cart-drawer"]');
-      let suggestion_cart = $('.cart-drawer .cart-drawer__suggestion');
-      if (cart_drawer.length > 0) {
 
-        function checkSuggestion() {
-          $.ajax('/cart.js', { dataType: "json" }).done(function (data) {
-            let items = data.items;
-            let isBackpack = false;
-            let isPowerbank = false;
-            for (let i in items) {
-              if (items[i].product_title == 'The Backpack') {
-                isBackpack = true;
-              }
-              if (items[i].product_title == 'The Charger') {
-                isPowerbank = true;
-              }
-            }
-            if (isBackpack && !isPowerbank) {
-              suggestion_cart.removeClass('hide');
-            } else {
-              suggestion_cart.addClass('hide');
-            }
-          });
-        }
-        checkSuggestion();
-        $(document).on('drawer_open_start', checkSuggestion);
-        $(document).on('cart_item_remove', checkSuggestion);
-        $(document).on('variant_add_to_cart_successful', checkSuggestion);
-
-
-        suggestion_cart.click(function () {
-          let item_id = suggestion_cart.data('item-id');
-          let cart_drawer_section = window.theme.sections.instances[0];
-
-          $.ajax('/cart/add.js', { data: "id=" + item_id, dataType: "json" }).done(function (data) {
-            cart_drawer_section.refresh();
-            suggestion_cart.addClass('hide');
-          });
-        });
-
-      }
-    });
-  </script>
-  <div class="modal powerbank">
-    <div>
-      <img
-        src="https://cdn.shopify.com/s/files/1/0552/0015/3738/t/2/assets/jpact20219-2_black_1000px_400x.jpg?v=81331588533857681041635294609"
-        alt="powerbank">
-      <h2>Get Your Free Limited Edition Powerbank</h2>
-      <p>1. Add a powerbank color of choice to your cart.<br>2. Use the coupon code SHAREYOURISM when checking out <br>
-        3. Limited to the first 500 Pre-Orders</p>
-      <a class="btn btn--to-secondary powerbank__button">
-        Let's Do This
-      </a>
-    </div>
-  </div>
 
 
 
