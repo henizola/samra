@@ -75,14 +75,15 @@
 }
 
 #s-f4996018-8a51-45d4-8d72-c5b80e296d7c {
-	background-image: url("../new-assets/hero_backpack.jpg");
+	background-image: url("../solomon/samra1.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	min-height: 700px;
-	background-position: left center;
+
+	background-position: left bottom;
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	#s-f4996018-8a51-45d4-8d72-c5b80e296d7c {
